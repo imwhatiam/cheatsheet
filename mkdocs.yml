@@ -1,0 +1,11 @@
+site_name: lian's cheatsheet
+
+nav:
+    - Home: index.md
+    - vim: vim.md
+    - linux: linux.md
+    - memcached: memcached.md
+    - mysql: mysql.md
+    - git: git.md
+
+theme: readthedocs
