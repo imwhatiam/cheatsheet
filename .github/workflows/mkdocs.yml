@@ -23,7 +23,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: install
         run: |
-          apt install python3
+          sudo apt install curl
           curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
           python get-pip.py
           pip install mkdocs
