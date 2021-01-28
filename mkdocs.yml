@@ -7,5 +7,6 @@ nav:
     - memcached: memcached.md
     - mysql: mysql.md
     - git: git.md
+    - git: docker.md
 
 theme: readthedocs
