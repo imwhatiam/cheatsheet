@@ -1,13 +1,22 @@
 site_name: lian's cheatsheet
 
+markdown_extensions:
+  - toc:
+      permalink: true
+
 nav:
     - Home: index.md
-    - vim: vim.md
-    - linux: linux.md
-    - memcached: memcached.md
-    - mysql: mysql.md
-    - git: git.md
-    - docker: docker.md
+    - Seafile:
+      - common conf: seafile/conf.md
+      - CAS: seafile/cas/cas.md
+    - tools:
+      - vim: tools/vim.md
+      - linux: tools/linux.md
+      - memcached: tools/memcached.md
+      - mysql: tools/mysql.md
+      - git: tools/git.md
+      - docker: tools/docker.md
+      - onlyoffice: tools/onlyoffice.md
     - About: about.md
 
 theme: readthedocs
