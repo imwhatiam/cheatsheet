@@ -16,7 +16,7 @@ git中还有三类常用对象：
 
 * commit：用于表示一次提交(commit)
 
-![Git](images/git.png)
+![Git](../images/git.png)
 
 #### git reset
 
