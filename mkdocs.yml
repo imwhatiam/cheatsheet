@@ -1,11 +1,9 @@
 site_name: lian's cheatsheet
 
-markdown_extensions:
-  - toc:
-      permalink: true
-
 nav:
     - Home: index.md
+    - Python:
+      - logging: python/logging.md
     - Seafile:
       - common conf: seafile/conf.md
       - CAS: seafile/cas/cas.md

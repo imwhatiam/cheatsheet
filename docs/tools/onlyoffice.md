@@ -58,7 +58,7 @@ map $http_upgrade $proxy_connection {
 ## docker run
 
 ```
-docker run -i -t -d -p 8123:80 --name oods onlyoffice/documentserver
+docker run -i -t -d -p 8123:80 --name oods --restart always onlyoffice/documentserver
 ```
 
 ## crontab -e

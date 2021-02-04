@@ -5,6 +5,10 @@
 
 ## via python
 
+```
+pip3 install python-cas
+```
+
 seahub_settings.py
 
 ```
