@@ -4,6 +4,7 @@ nav:
     - Home: index.md
     - Python:
       - logging: python/logging.md
+      - PIL: python/pil.md
     - Seafile:
       - common conf: seafile/conf.md
       - CAS: seafile/cas/cas.md
@@ -11,6 +12,7 @@ nav:
       - linux: tools/linux.md
       - vim: tools/vim.md
       - git: tools/git.md
+      - tmux: tools/tmux.md
       - docker: tools/docker.md
       - nginx: tools/nginx.md
       - certbot: tools/certbot.md
