@@ -19,6 +19,7 @@ nav:
       - onlyoffice: tools/onlyoffice.md
       - mysql: tools/mysql.md
       - memcached: tools/memcached.md
+      - science online: tools/science-online.md
     - About: about.md
 
 theme: readthedocs
