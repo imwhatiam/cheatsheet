@@ -1,6 +1,6 @@
 # tmux
 
-https://tmuxcheatsheet.com/
+[tmuxcheatsheet](https://tmuxcheatsheet.com/)
 
 `Ctrl-b` then `[` then you can use your normal navigation keys to scroll around (eg. `Up Arrow` or `PgDn`). Press `q` to quit scroll mode.
 
