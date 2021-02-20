@@ -1,4 +1,4 @@
-## Git
+# Git
 
 git里的三个区域概念：
 
@@ -18,7 +18,9 @@ git中还有三类常用对象：
 
 ![Git](../images/git.png)
 
-#### git reset
+## git command
+
+### git reset
 
 * `git reset HEAD^ a.py`：回退a.py这个文件的版本到上一个版本
 
@@ -60,7 +62,7 @@ git中还有三类常用对象：
 
 * `git grep "te"`：查現在版本是否有 "te" 的字串
 
-#### git branch
+### git branch
 
 * change branch name：`git branch -m <oldname> <newname>`
 
@@ -92,9 +94,7 @@ git中还有三类常用对象：
 
 * 推送远程仓库`git push [remoteName] [localBranchName]`
 
-## Trouble Shoot
-
-#### .gitignore does not work
+### .gitignore does not work
 
 ```
 git rm --cached -r .
@@ -102,26 +102,26 @@ git add .
 git status
 ```
 
-#### Revert changes to a file in a commit
+### Revert changes to a file in a commit
 
 ```
 git show some_commit_sha1 -- some_file.c | git apply -R
 ```
 
-#### export git log
+### export git log
 
 ```
 git --no-pager log > log.txt
 ```
 
-#### 恢复本地已删除的 commit
+### 恢复本地已删除的 commit
 
 ```
 git reflog
 git reset --hard 98abc5a
 ```
 
-#### 获取远程 tag，并基于某一 tag 新建一个分支
+### 获取远程 tag，并基于某一 tag 新建一个分支
 
 ```
 git fetch origin tag v7.1.9-pro
@@ -132,8 +132,45 @@ git fetch --tags --prune
 git checkout tags/v1.0 -b NewBranch
 ```
 
-#### Clean up outdated references in local repository
+### Clean up outdated references in local repository
 
 ```
 git remote prune origin
+```
+
+##  mac 下 git 命令自动补全
+
+### 安装 Homebrew
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### 安装 bash-completion
+
+```
+brew install bash-completion
+brew info bash-completion
+```
+
+Add the following line to your `~/.bash_profile` :
+
+```
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+```
+
+### 下载 git-completion.bash
+
+```
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+
+mv git-completion.bash ~/.git-completion.bash
+```
+
+### 配置 ~/.bashrc
+
+Add the following line to your `~/.bashrc` :
+
+```
+source ~/.git-completion.bash
 ```

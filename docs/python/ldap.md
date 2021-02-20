@@ -1,0 +1,62 @@
+# ldap
+
+## LDAP test server
+
+[https://www.zflexldapadministrator.com/index.php/blog/82-free-online-ldap](https://www.zflexldapadministrator.com/index.php/blog/82-free-online-ldap)
+
+LDAP Server Connection Info:
+
+```
+Server: www.zflexldap.com 
+Port: 389
+Bind DN: cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com
+Bind Password: zflexpass
+```
+
+Other Users IDs and their passwords are:
+
+```
+uid=guest1,ou=users,ou=guests,dc=zflexsoftware,dc=com
+guest1password
+uid=guest2,ou=users,ou=guests,dc=zflexsoftware,dc=com
+guest2password
+uid=guest3,ou=users,ou=guests,dc=zflexsoftware,dc=com
+guest3password
+```
+
+[https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/](https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/)
+
+Here are the credentials for an Online LDAP Test Server that you can use for testing your applications that require LDAP-based authentication.  Our goal is to eliminate the need for you to download, install and configure an LDAP sever for testing. If all you need is to test connectivity and authentication against a few identities, you have come to the right place.
+
+LDAP Server Information (read-only access):
+
+```
+Server: ldap.forumsys.com
+Port: 389
+Bind DN: cn=read-only-admin,dc=example,dc=com
+Bind Password: password
+```
+
+All user passwords are `password`.
+
+You may also bind to individual Users (uid) or the two Groups (ou) that include:
+
+```
+ou=mathematicians,dc=example,dc=com
+
+riemann
+gauss
+euler
+euclid
+```
+
+```
+ou=scientists,dc=example,dc=com
+
+einstein
+newton
+galieleo
+tesla
+```
+
+![ldap](https://www.forumsys.com/wp-content/uploads/2014/02/LDAP-Users1.png)
