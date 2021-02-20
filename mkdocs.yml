@@ -6,11 +6,16 @@ nav:
       - logging: python/logging.md
       - PIL: python/pil.md
       - ldap: python/ldap.md
+      - saml2.0: python/saml2.0.md
+      - restful-api: python/restful-api.md
+      - scripts:
+        - auto-toc.py: python/scripts/auto-toc.py
     - Seafile:
       - common conf: seafile/conf.md
       - CAS: seafile/cas/cas.md
     - tools:
       - linux: tools/linux.md
+      - regex: tools/regex.md
       - vim: tools/vim.md
       - git: tools/git.md
       - tmux: tools/tmux.md

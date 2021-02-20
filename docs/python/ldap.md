@@ -7,7 +7,7 @@
 |dc|Domain Component|
 |ou|Organization Unit|
 |cn|Common Name|
-|uid| User ID|
+|uid|User ID|
 
 ```
 cn=username,ou=people,dc=test,dc=com
@@ -94,7 +94,7 @@ uid=guest3,ou=users,ou=guests,dc=zflexsoftware,dc=com
 guest3password
 ```
 
-- [https://www.zflexldapadministrator.com/index.php/blog/82-free-online-ldap](https://www.zflexldapadministrator.com/index.php/blog/82-free-online-ldap)
+- <https://www.zflexldapadministrator.com/index.php/blog/82-free-online-ldap>
 
 ### forumsys
 
@@ -133,4 +133,4 @@ tesla
 
 ![ldap](https://www.forumsys.com/wp-content/uploads/2014/02/LDAP-Users1.png)
 
-- [https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/](https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/)
+- <https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/>

@@ -15,5 +15,5 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx
 ```
 
-- [https://snapcraft.io/docs/installing-snap-on-ubuntu](https://snapcraft.io/docs/installing-snap-on-ubuntu)
-- [https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx](https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx)
+- <https://snapcraft.io/docs/installing-snap-on-ubuntu>
+- <https://certbot.eff.org/lets-encrypt/ubuntufocal-nginx>

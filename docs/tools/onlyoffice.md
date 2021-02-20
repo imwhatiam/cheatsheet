@@ -5,6 +5,7 @@ deploy onlyoffice server
 ## install docker
 
 please see [here](./docker.md#install)
+please see <./docker.md#install>
 
 ## install nginx
 
