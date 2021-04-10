@@ -27,7 +27,7 @@ show tables;
 create database
 
 ```
-create database seahub charset utf8;
+CREATE DATABASE liantest CHARACTER SET utf8;
 ```
 
 switch database
@@ -146,3 +146,75 @@ ERROR 1005 (HY000): Can't create table `ali_seahub`.`related_files_relatedfiles`
 > Corresponding columns in the foreign key and the referenced key must have similar data types. The size and sign of integer types must be the same. The length of string types need not be the same. For nonbinary (character) string columns, the character set and collation must be the same.
 
 将 Seahub 建表语句中的 CHARSET 改为 utf8mb4，经测试可创建新表成功。
+
+
+#### errno: 150 "Foreign key constraint is incorrectly formed"
+
+建立外键的字段必须和引用表的字段一模一样的类型。
+
+<https://upliu.net/foreign-key-constraint-is-incorrectly-formed.html>
+
+#### ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+
+<https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost>
+
+Some systems like Ubuntu, mysql is using by default the UNIX auth_socket plugin.
+
+Basically means that: db_users using it, will be "auth" by the system user credentias. You can see if your root user is set up like this by doing the following:
+
+```
+$ sudo mysql -u root # I had to use "sudo" since is new installation
+
+mysql> USE mysql;
+mysql> SELECT User, Host, plugin FROM mysql.user;
+
++------------------+-----------------------+
+| User             | plugin                |
++------------------+-----------------------+
+| root             | auth_socket           |
+| mysql.sys        | mysql_native_password |
+| debian-sys-maint | mysql_native_password |
++------------------+-----------------------+
+```
+
+As you can see in the query, the root user is using the auth_socket plugin
+
+There are 2 ways to solve this:
+
+You can set the root user to use the mysql_native_password plugin
+You can create a new db_user with you system_user (recommended)
+Option 1:
+
+```
+$ sudo mysql -u root # I had to use "sudo" since is new installation
+
+mysql> USE mysql;
+mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+mysql> FLUSH PRIVILEGES;
+mysql> exit;
+
+$ sudo service mysql restart
+```
+
+Option 2: (replace YOUR_SYSTEM_USER with the username you have)
+
+```
+$ sudo mysql -u root # I had to use "sudo" since is new installation
+
+mysql> USE mysql;
+mysql> CREATE USER 'YOUR_SYSTEM_USER'@'localhost' IDENTIFIED BY 'YOUR_PASSWD';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'YOUR_SYSTEM_USER'@'localhost';
+mysql> UPDATE user SET plugin='auth_socket' WHERE User='YOUR_SYSTEM_USER';
+mysql> FLUSH PRIVILEGES;
+mysql> exit;
+
+$ sudo service mysql restart
+```
+
+Remember that if you use option #2 you'll have to connect to mysql as your system username (mysql -u YOUR_SYSTEM_USER)
+
+Note: On some systems (e.g., Debian stretch) 'auth_socket' plugin is called 'unix_socket', so the corresponding SQL command should be: UPDATE user SET plugin='unix_socket' WHERE User='YOUR_SYSTEM_USER';
+
+Update: from @andy's comment seems that mysql 8.x.x updated/replaced the auth_socket for caching_sha2_password I don't have a system setup with mysql 8.x.x to test this, however the steps above should help you to understand the issue. Here's the reply:
+
+One change as of MySQL 8.0.4 is that the new default authentication plugin is 'caching_sha2_password'. The new 'YOUR_SYSTEM_USER' will have this auth plugin and you can login from the bash shell now with "mysql -u YOUR_SYSTEM_USER -p" and provide the password for this user on the prompt. No need for the "UPDATE user SET plugin" step. For the 8.0.4 default auth plugin update see, https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/

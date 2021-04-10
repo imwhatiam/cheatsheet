@@ -3,11 +3,13 @@ site_name: lian's cheatsheet
 nav:
     - Home: index.md
     - Python:
+      - django: python/django.md
       - logging: python/logging.md
       - PIL: python/pil.md
       - ldap: python/ldap.md
       - saml2.0: python/saml2.0.md
       - restful-api: python/restful-api.md
+      - elasticsearch: python/elasticsearch.md
       - scripts:
         - auto-toc.py: python/scripts/auto-toc.py
     - Seafile:
