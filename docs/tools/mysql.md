@@ -94,6 +94,23 @@ drop user 'root'@'114.249.235.35';
 
 ### trouble shoot
 
+#### Specified key was too long; max key length is 767 bytes
+
+系统变量 `innodb_large_prefix` 开启了，则对于使用 `DYNAMIC` 或 `COMPRESSED` 行格式的 `InnoDB` 表，索引键前缀限制为3072字节。如果禁用 `innodb_large_prefix` ，不管是什么表，索引键前缀限制为767字节。
+
+上述的bug很明显是索引超出了限制的长度767（我司生产上 `innodb_large_prefix` 禁用了）：
+
+我发现报错的那张表建立了一个 `varchar` 类型的索引， `varchar(255)` ，觉得没什么问题，其实不然，上述的767是字节，而 `varchar` 类型是字符，同时我发现我使用的字符集为（`utf8mb4`），这个指每个字符最大的字节数为4，所以很明显 `4*255 > 767`。
+
+所以就报上述错了 `（Specified key was too long; max key length is 767 bytes）`。
+
+解决方法：
+
+改变 `varchar` 的字符数，我改成了64就可以了。 `varchar(64)` 
+
+或者启用 `innodb_large_prefix` ，那么限制值会增加到3072
+
+
 #### access to Mysql database from remote server
 
 ```
@@ -147,6 +164,36 @@ ERROR 1005 (HY000): Can't create table `ali_seahub`.`related_files_relatedfiles`
 
 将 Seahub 建表语句中的 CHARSET 改为 utf8mb4，经测试可创建新表成功。
 
+
+#### [Err] 1005 - Can't create table (errno: 150 "Foreign key constraint is incorrectly formed")
+
+该错误一般出现原因如下：
+
+1、外键的引用类型不一样，如主键是int外键是char
+
+2、找不到主表中引用的列
+
+3、主键和外键的字符编码不一致，也可能存储引擎不一样
+
+```
+CREATE TABLE t_employee(
+    emp_id INT(3) PRIMARY KEY,
+    emp_no INT(3) UNIQUE NOT NULL,
+    emp_name VARCHAR(10) NOT NULL,
+    emp_age tinyint(4) NOT NULL DEFAULT 25 CHECK (emp_age BETWEEN 20 AND 60),
+    sex VARCHAR(1) CHECK (sex in ('男','女')),
+    job VARCHAR(20),
+    sal INT(10),
+    -- inline写法
+    -- REFERENCES 主表（主表字段）
+    -- dept_no int  REFERENCES t_dept(dept_no)
+    -- outline写法
+    dept_no int NOT NULL ,
+    FOREIGN KEY(dept_no) REFERENCES t_dept(dept_no) ON DELETE SET NULL
+);
+```
+
+格式为 `dept_no int NOT NULL`, 但是外键却为 `FOREIGN KEY(dept_no) REFERENCES t_dept(dept_no) ON DELETE SET NULL`，删除格式的 `NOT NULL` 即可
 
 #### errno: 150 "Foreign key constraint is incorrectly formed"
 

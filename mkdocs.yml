@@ -12,17 +12,20 @@ nav:
       - elasticsearch: python/elasticsearch.md
       - scripts:
         - auto-toc.py: python/scripts/auto-toc.py
+    - Linux:
+      - linux/linux.md
+      - linux/shell.md
+      - linux/process-and-thread.md
+    - Docker:
+      - docker/docker.md
     - Seafile:
       - common conf: seafile/conf.md
       - CAS: seafile/cas/cas.md
     - tools:
-      - linux: tools/linux.md
       - regex: tools/regex.md
       - vim: tools/vim.md
       - git: tools/git.md
       - tmux: tools/tmux.md
-      - docker:
-        - tools/docker/docker.md
       - nginx: tools/nginx.md
       - certbot: tools/certbot.md
       - onlyoffice: tools/onlyoffice.md
