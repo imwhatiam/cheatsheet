@@ -68,3 +68,7 @@ docker run -i -t -d -p 8123:80 --name oods --restart always onlyoffice/documents
 30 2 * * 1 certbot renew >> /var/log/le-renew.log
 35 2 * * 1 service nginx restart
 ```
+
+----------
+
+![](../images/onlyoffice-edit-file-flow-chart.png)

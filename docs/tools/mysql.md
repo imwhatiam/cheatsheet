@@ -9,6 +9,20 @@ sudo mysql_secure_installation
 sudo mysql -uroot
 ```
 
+### config mariadb
+
+vi `/etc/mysql/mariadb.conf.d/50-server.cnf`
+
+```
+[mysqld]
+
+lower_case_table_names=1
+```
+
+```
+service mysql restart
+```
+
 ### commands
 
 login mysql
@@ -92,7 +106,23 @@ delete user
 drop user 'root'@'114.249.235.35';
 ```
 
+allow remote connect
+
+```
+GRANT ALL ON *.* TO root@'192.168.255.221' IDENTIFIED BY 'root';
+```
+
 ### trouble shoot
+
+#### ERROR 1044 (42000): Access denied for user 'seafile'@'localhost' to database 'ifile'
+
+```
+mysql -u root -p
+
+grant all privileges on *.* to 'seafile'@'localhost' identified by 'IeKi8aht';
+
+flush privileges;
+```
 
 #### Specified key was too long; max key length is 767 bytes
 
