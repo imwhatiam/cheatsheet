@@ -1,5 +1,13 @@
 site_name: lian's cheatsheet
 
+theme:
+    name: mkdocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - python
+        - django
+
 nav:
     - Home: index.md
     - Seafile:
@@ -34,5 +42,3 @@ nav:
       - memcached: tools/memcached.md
       - science online: tools/science-online.md
     - About: about.md
-
-theme: readthedocs
