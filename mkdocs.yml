@@ -27,6 +27,9 @@ nav:
       - linux/linux.md
       - linux/shell.md
       - linux/process-and-thread.md
+    - Mysql:
+      - mysql/mysql.md
+      - mysql/mysql-troubleshoot.md
     - Docker:
       - docker/docker.md
     - OnlyOffice:
@@ -38,7 +41,6 @@ nav:
       - tmux: tools/tmux.md
       - nginx: tools/nginx.md
       - certbot: tools/certbot.md
-      - mysql: tools/mysql.md
       - memcached: tools/memcached.md
       - science online: tools/science-online.md
     - About: about.md
