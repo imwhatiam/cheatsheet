@@ -4,16 +4,15 @@ deploy onlyoffice server
 
 ## install docker
 
-please see [here](./docker.md#install)
-please see <./docker.md#install>
+please see [here](../docker/docker.md#install)
 
 ## install nginx
 
-please see [here](./nginx.md#install)
+please see [here](../tools/nginx.md#install)
 
 ## install certbot
 
-please see [here](./certbot.md#install)
+please see [here](../tools/certbot.md#install)
 
 ## change nginx conf
 
@@ -71,4 +70,4 @@ docker run -i -t -d -p 8123:80 --name oods --restart always onlyoffice/documents
 
 ----------
 
-![](../images/onlyoffice-edit-file-flow-chart.png)
+![](./onlyoffice-edit-file-flow-chart.png)

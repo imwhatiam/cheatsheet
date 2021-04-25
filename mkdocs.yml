@@ -2,6 +2,9 @@ site_name: lian's cheatsheet
 
 nav:
     - Home: index.md
+    - Seafile:
+      - common conf: seafile/conf.md
+      - CAS: seafile/cas/cas.md
     - Python:
       - django: python/django.md
       - logging: python/logging.md
@@ -18,9 +21,8 @@ nav:
       - linux/process-and-thread.md
     - Docker:
       - docker/docker.md
-    - Seafile:
-      - common conf: seafile/conf.md
-      - CAS: seafile/cas/cas.md
+    - OnlyOffice:
+      - onlyoffice/onlyoffice.md
     - tools:
       - regex: tools/regex.md
       - vim: tools/vim.md
@@ -28,7 +30,6 @@ nav:
       - tmux: tools/tmux.md
       - nginx: tools/nginx.md
       - certbot: tools/certbot.md
-      - onlyoffice: tools/onlyoffice.md
       - mysql: tools/mysql.md
       - memcached: tools/memcached.md
       - science online: tools/science-online.md
