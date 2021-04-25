@@ -21,6 +21,7 @@ nav:
       - saml2.0: python/saml2.0.md
       - restful-api: python/restful-api.md
       - elasticsearch: python/elasticsearch.md
+      - notebook: python/notebook.md
       - scripts:
         - auto-toc.py: python/scripts/auto-toc.py
     - Linux:

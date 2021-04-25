@@ -1,7 +1,5 @@
 # tmux
 
-[tmuxcheatsheet](https://tmuxcheatsheet.com/)
-
 `Ctrl-b` then `[` then you can use your normal navigation keys to scroll around (eg. `Up Arrow` or `PgDn`). Press `q` to quit scroll mode.
 
 ```
@@ -78,3 +76,5 @@ Ctrl+b  // 激活控制台；此时以下按键生效
     Alt+o   // 逆时针旋转当前窗口的面板
     Ctrl+o  // 顺时针旋转当前窗口的面板
 ```
+
+![](../images/tmux-cheatsheet.png)
