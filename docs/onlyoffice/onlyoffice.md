@@ -58,7 +58,7 @@ map $http_upgrade $proxy_connection {
 ## docker run
 
 ```
-docker run -i -t -d -p 8123:80 --name oods --restart always onlyoffice/documentserver
+sudo docker run -i -t -d -p 8123:80 -e JWT_ENABLED=true -e JWT_SECRET=lian-secret-string --name oods-enable-jwt --restart always onlyoffice/documentserver:6.2
 ```
 
 ## crontab -e

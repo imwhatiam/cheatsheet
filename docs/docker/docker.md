@@ -156,15 +156,15 @@ docker export -o mysql-`date +%Y%m%d`.tar a404c6c174a2
 ### save
 
 ```
-# 将 **镜像** runoob/ubuntu:v3 生成 my_ubuntu_v3.tar 文档
+# 将 **镜像** runoob/ubuntu:v3 生成 my_ubuntu_v3.tar
 docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3
 ```
 
 ### import
 
 ```
-# 将镜像 runoob/ubuntu:v3 生成 my_ubuntu_v3.tar 文档
-docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3
+# 从镜像归档文件my_ubuntu_v3.tar创建镜像，命名为runoob/ubuntu:v4
+docker import my_ubuntu_v3.tar runoob/ubuntu:v3
 ```
 
 ### search
