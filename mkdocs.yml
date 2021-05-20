@@ -31,7 +31,7 @@ nav:
       - linux/process-and-thread.md
     - Mysql:
       - mysql/mysql.md
-      - mysql/mysql-troubleshoot.md
+      - mysql/troubleshoot.md
     - Docker:
       - docker/docker.md
     - OnlyOffice:

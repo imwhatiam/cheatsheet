@@ -23,22 +23,41 @@ IAM，Identity and Access Management.
 
 未登录时，浏览器会将页面重定向到 IdP，
 
-`https://www.idp.com/saml/login?SAMLRequest={SAMLRequest}&RelayState={RelayState}&SigAlg={SigAlg}&Signature={Signature}`
+- HTTP Redirect Binding
 
-并带上以下参数：
+    `GET https://win-mi64c2jsv9s.lian.local/adfs/ls/?SAMLRequest=hZJfT8IwFMW%2FytL3raMgCQ0jQQmRBBVlGOPbdStQ0j%2Bz9w7027uBRnzBx%2Fae3z3nNB0iWFPJcU1b96Tea4UUfVjjULaDjNXBSQ%2BoUTqwCiUVcjm%2Bm0uRpBIQVSDtHTtDqstMFTz5whsWjX%2FoG%2B%2BwtiosVdjrQq2e5hnbElUoOS%2BV9QkqWGujEvIVby0EhwI5iyZNWO2g3fFLHLSLre73CrHD%2FQATo8ElxhdgOJRr5KYlZ5OM6TLuUud%2B7w%2Brx13pxealmjYTxFrNHBI4yphIRSdOr%2BLOIE%2F7stuTQryyaPHd4Vq7UrvN5cJvJxHK2zxfxIuHZc6iZxXwGLoRsNGw7SSPxiGa%2BmCBLq9sb5r066NUKkeaPtnonyeziqAEAj7kZ36j0%2BnvBxh9AQ%3D%3D&RelayState=%2F`
+    
+    Query String Parameters：
+    
+    1. `SAMLRequest`。
+    
+    2. `RelayState`，an URL parameter that we use to say to our Identity Provider where he should send the response back。
 
-1. `SAMLRequest`。
+    下面 **python3-saml-demo-django** 代码示例中，配置 `saml/advanced_settings.json` 中的 `"authnRequestsSigned": True,`，则会使用 `SigAlg` 和 `Signature` 参数。
 
-2. `RelayState`，an URL parameter that we use to say to our Identity Provider where he should send the response back。
+    `GET https://samltest.id/idp/profile/SAML2/Redirect/SSO?SAMLRequest=fVNNj9owEL3vr4hyBychfFlARaEfSBQikt1DL5WxJ11LiZ3ak13239cObJeVtiSHKOM3b%2Ba9Gc8sq6uGLlt8VAf404LFuyA41ZWytDuah61RVDMrLVWsBkuR03z5Y0uTfkQbo1FzXYXvkm7nMGvBoNTKJ23W83C%2F%2B7Ldf9vsfqWTMZsM4hFPh8ekTOPRMR0Mk%2Bl0cBSpGIppGsNUJCPmEx%2FAWMcxDx2l%2Fw%2BCzOgnKcDsXMV5mGcBOjFdDWtb2CiLTKHDR0nci4a9eFrEEY0GNI1%2BetTaoaVi2JE%2BIjaWEuLVeJq%2BFESKhji9payAeDEJOYCQBjiSPN97iuzixmephFS%2Fb9twPIMs%2FV4UWS%2Fb54WnWL6as9LKtjWYHMyT5HB%2F2J67ck3FybgfuTemk2gyJp8Yt%2BGis2Dm%2B6WdXrP4GF0DMsGQkRm5Br%2BlN9QbuFlnupL8pYv756s2NcP%2FS4pdAR%2BRold2UNoq2wCXpQQR%2FqNZVpV%2BXhlg6GaEpoUwIO%2BKX5YQRLeSzgWEEwYrXTfMSOtnAyfG8SL4TfQ1fFW5HTtAubi5hpxyj3PhzH2etRF%2Bfm6cIArDXPPa4MWkD8nPXZMbbS%2FuXo%2Bv79fiLw%3D%3D&RelayState=http%3A%2F%2F127.0.0.1%3A8087%2F&Signature=DKJ1wQO7FTxrt7mGh6ytws%2B8KvMaM5AdT1Ls3sBM5JSPZOMsCdvCwMWAOkGU8EE1LGtkFrD6mpjI%2B%2FXeejQ03e6LdjrtGCdVp0ht2tunEpsPv2Ia31%2FvSGs39jCBRmTkPOnl21Of8T%2BOnCfmjxs4qhpFX25KX0TxfhK%2BMP9ZXa1XKAcrdiLXC%2B0jNYQth75eCG%2BrvgW53inFfNy6diNdPqM0AjhCVqhSFezuBuw9BJciVXi9T8occUiWFDCOFn8ThjrJOB0eslft2%2Bx5GrKnjr8RO1so7WnSz1N5FIe5Uw0713iXD16BsM9xVHLHbA01E0SIy%2Bz40J3C4XZyhB43Vw%3D%3D&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256`
+    
+    3. `SigAlg`，可选，签名算法（比如：`http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`）。
+    
+    4. `Signature`，可选，签名值。SP 发起请求前，会将请求中的 `SAMLRequest={SAMLRequest}&RelayState={RelayState}&SigAlg={SigAlg}` 使用 SP 私钥签名（签名算法为 `SigAlg` 字段指定的算法），之后再做一次 Base64 编码作为签名值。
+    
+    如果有参数签名的话，IdP 收到请求后通过 SP 公钥（SP Metadata.xml文件中 `<ds:X509Certificate></ds:X509Certificate>` 标签内的值）来验证签名。签名验证通过，则表明是合法 SP 发送的请求可以进行后续操作，否则请求非法。
 
-3. `SigAlg`，签名算法（比如：`http://www.w3.org/2001/04/xmldsig-more#rsa-sha256`）。
+- HTTP POST Binding
 
-4. `Signature`，签名值。SP 发起请求前，会将请求中的 `SAMLRequest={SAMLRequest}&RelayState={RelayState}&SigAlg={SigAlg}` 使用 SP 私钥签名（签名算法为 `SigAlg` 字段指定的算法），之后再做一次 Base64 编码作为签名值。
+    `POST https://win-mi64c2jsv9s.lian.local/adfs/ls/`
 
+    Form Data:
+    
+    1. `SAMLRequest`。
+    
+    2. `RelayState`。
 
-IdP 收到请求后通过 SP 公钥（SP Metadata.xml文件中 `<ds:X509Certificate></ds:X509Certificate>` 标签内的值）来验证签名。签名验证通过，则表明是合法 SP 发送的请求可以进行后续操作，否则请求非法。
+显示 Idp 登录页面，用户登录成功后，IdP 发送 POST 请求（就是一个 HTML form 表单和一段立即提交该表单的 JS 代码）给 SP（AssertionConsumerService）并带上以下参数：
 
-显示 Idp 登录页面，用户登录成功后，IdP 发送 POST 请求给 SP（AssertionConsumerService）并带上以下参数：
+`POST https://demo.seafile.top/saml2/acs/`
+
+Form Data:
 
 1. `SAMLResponse`。
 
@@ -57,6 +76,7 @@ SP 收到 `SAMLResponse` 后，解析出用户信息，进行后续操作。
 - [Reloading SAML : SAML Basics](https://sagarag.medium.com/reloading-saml-saml-basics-b8999995c73e)
 - [华为云 IDP Metadata.xml](https://support.huaweicloud.com/devg-bpconsole/access_00001.html)
 - [华为云 saml 认证](https://support.huaweicloud.com/api-bpconsole/jac_00001.html)
+- [Authing saml overview](https://docs.authing.cn/v2/concepts/saml/saml-overview.html)
 
 ## Tools
 
