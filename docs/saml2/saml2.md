@@ -25,7 +25,7 @@ IAM，Identity and Access Management.
 
 - HTTP Redirect Binding
 
-    `GET https://win-mi64c2jsv9s.lian.local/adfs/ls/?SAMLRequest=hZJfT8IwFMW%2FytL3raMgCQ0jQQmRBBVlGOPbdStQ0j%2Bz9w7027uBRnzBx%2Fae3z3nNB0iWFPJcU1b96Tea4UUfVjjULaDjNXBSQ%2BoUTqwCiUVcjm%2Bm0uRpBIQVSDtHTtDqstMFTz5whsWjX%2FoG%2B%2BwtiosVdjrQq2e5hnbElUoOS%2BV9QkqWGujEvIVby0EhwI5iyZNWO2g3fFLHLSLre73CrHD%2FQATo8ElxhdgOJRr5KYlZ5OM6TLuUud%2B7w%2Brx13pxealmjYTxFrNHBI4yphIRSdOr%2BLOIE%2F7stuTQryyaPHd4Vq7UrvN5cJvJxHK2zxfxIuHZc6iZxXwGLoRsNGw7SSPxiGa%2BmCBLq9sb5r066NUKkeaPtnonyeziqAEAj7kZ36j0%2BnvBxh9AQ%3D%3D&RelayState=%2F`
+    `https://samltest.id/idp/profile/SAML2/Redirect/SSO?SAMLRequest=fVNdj5swEHy%2FX4F4Twy0lyArSZUm%2FYiUJijQPvSl2rOXniWwqb3c5f59bZLr5aRrQAixnp3dmV1mDtqm48ue7vUB%2F%2FTo6CaKjm2jHR%2BO5nFvNTfglOMaWnScBC%2BX37Y8Gye8s4aMME38Kul6DjiHlpTRIWmznsf73aft%2Fstm96uWAlLI6izL8xon%2FkGAuywFuJ2K6URmaZokE6hD4g%2B0znPMY08ZvqOosOZBSbQ7X3Eel0VEXsxQw7keN9oRaPL4JEtHye0oS6sk5%2B9ynr3%2FGVBrj1YaaCC9J%2BocZyyoCTRjJZmSHfN6a9UgC2IydkCpLApiZbkPFMXZjY9KS6V%2FX7fh7gRy%2FGtVFaNiX1aBYvlszspo17doS7QPSuD3w%2FbUlW8qzabjxN8pz5N8yj6AcPFisGAW%2BuWDXrt4G90igQQCNmOX4Jf0jgcDN%2BvCNEo8DfFwfTa2Bfq%2FpNQXCBElR%2FUA5b12HQpVK5TxP5pl05jHlUUgPyOyPcYRe1X8vIQoh5X0LhAeKVqZtgOrXJgNHkHQWfCL6Ev4qvE7dsB6cXUNBRcB58OFfz0aK8P8%2FDhRVhZ888bS2aQ3yU9dsyttL26ejy%2F%2Fr8Vf&RelayState=http%3A%2F%2F127.0.0.1%3A8087%2F`
     
     Query String Parameters：
     
@@ -129,15 +129,3 @@ sp 部分使用 onelogin 默认配置 https://github.com/onelogin/python3-saml/b
 sp 使用自签名证书：`openssl req -new -x509 -days 3652 -nodes -out sp.crt -keyout sp.key`
 
 idp 部分参考 https://samltest.id/download/#SAMLtest%E2%80%99s_IdP
-
-### logout
-
-这部分未配置成功，点击 Logout 后页面显示：
-
-```
-Errors:
-invalid_response
-Reason: The status code of the Response was not Success, was Responder -> unexpected
-```
-
-查看 https://samltest.id/logs/idp.log 上的 [log](./logout-error-from-idp.log)，估计是签名、加密的问题，未做进一步调测。
