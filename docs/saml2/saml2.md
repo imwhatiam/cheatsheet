@@ -10,7 +10,7 @@ IdP，Identity Provider 身份认证方。
 
 IAM，Identity and Access Management.
 
-## IDP Metadata.xml
+## IdP Metadata.xml
 
 |参数|含义|
 |----|----|
