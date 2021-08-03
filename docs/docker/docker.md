@@ -31,18 +31,27 @@ sudo docker run hello-world
 docker login
 ```
 
-### run
+### run and exec
 
 将本地的 8123 端口映射到 Docker 容器的 8000 端口。
 
 ```
 docker run -it -p 127.0.0.1:8123:8000 ubuntu:latest /bin/bash
+
+docker run -d --name hancom-office -p 8888:80 --privileged=true centos:7 /usr/sbin/init
 ```
 
 - `-t`: 在新容器内指定一个伪终端或终端。
 - `-i`: 允许你对容器内的标准输入 (STDIN) 进行交互。
 - `-P`: 是容器内部端口 **随机映射** 到主机的高端口。
 - `-p`: 是容器内部端口 **绑定** 到指定的主机端口。
+
+```
+# This will connect to the particular container
+docker exec -it <container-id> /bin/bash
+
+docker exec -it hancom-office /bin/bash
+```
 
 ### ps
 
@@ -137,13 +146,6 @@ docker start $(docker ps -a -q --filter "status=exited")
 ```
 # reattach the terminal & stdin
 docker attach `docker ps -q -l`
-```
-
-### exec
-
-```
-# This will connect to the particular container
-docker exec -it <container-id> /bin/bash
 ```
 
 ### export

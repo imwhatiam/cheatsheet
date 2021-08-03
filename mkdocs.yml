@@ -16,6 +16,7 @@ nav:
     - Python:
       - django: python/django.md
       - logging: python/logging.md
+      - base64: python/base64.md
       - PIL: python/pil.md
       - ldap: python/ldap.md
       - restful-api: python/restful-api.md
@@ -45,4 +46,5 @@ nav:
       - certbot: tools/certbot.md
       - memcached: tools/memcached.md
       - science online: tools/science-online.md
+      - ngrok: tools/ngrok.md
     - About: about.md
