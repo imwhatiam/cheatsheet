@@ -1,3 +1,8 @@
+
+```
+git remote add cdn https://github.com.cnpmjs.org/haiwen/seahub.git
+```
+
 # Git
 
 git里的三个区域概念：
