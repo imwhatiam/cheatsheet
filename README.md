@@ -1,3 +1,3 @@
 # cheatsheet
 
-[cheatsheet.imwhatiam.com](cheatsheet.imwhatiam.com)
+https://cheatsheet.imwhatiam.com
