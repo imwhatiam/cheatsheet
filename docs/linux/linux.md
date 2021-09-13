@@ -6,6 +6,8 @@
 lsb_release -a
 uname -a
 cat /etc/issue
+
+cat /etc/centos-release
 ```
 
 ## 快捷命令

@@ -126,6 +126,12 @@ git reflog
 git reset --hard 98abc5a
 ```
 
+### 获取远程 pull request，并新建一个分支
+
+```
+git fetch origin pull/pull-request-ID/head:local-branch-name
+```
+
 ### 获取远程 tag，并基于某一 tag 新建一个分支
 
 ```
