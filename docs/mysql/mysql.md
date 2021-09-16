@@ -65,10 +65,16 @@ drop database mytestdb;
 mysqldump -u user -p password -d seahub > seahub.sql
 ```
 
-### export database and data in tables
+### export data in all tables
 
 ```
 mysqldump -u user -p password seahub > seahub.sql
+```
+
+### export data in two tables
+
+```
+mysqldump -u user -p password seahub profile_profile api2_token > table.sql
 ```
 
 ### show table schema
