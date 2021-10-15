@@ -13,6 +13,8 @@ nav:
     - Seafile:
       - common conf: seafile/conf.md
       - CAS: seafile/cas/cas.md
+      - scripts:
+        - upload-file.py: seafile/scripts/upload-file.py
     - Python:
       - django: python/django.md
       - logging: python/logging.md
