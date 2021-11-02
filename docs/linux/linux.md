@@ -353,6 +353,11 @@ filter out lines includes `HEAD`
 tail -f /opt/seafile/logs/*.log /var/log/nginx/*.log | grep -v HEAD
 ```
 
+## grep
+
+```
+grep -r search-string .
+```
 
 ## find
 
