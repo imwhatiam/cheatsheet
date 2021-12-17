@@ -29,6 +29,12 @@ ctrl + 方向键左键， 光标移动到前一个单词开头
 ctrl + 方向键右键， 光标移动到后一个单词结尾
 ```
 
+## tcpdump
+
+```
+tcpdump -i any port 8082 -w output.pcap
+```
+
 ## openssh
 
 ### Extracting the certificate and keys from a .pfx file
