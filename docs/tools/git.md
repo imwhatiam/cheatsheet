@@ -1,6 +1,8 @@
 
 ```
 git remote add cdn https://github.com.cnpmjs.org/haiwen/seahub.git
+
+git config --global url.https://hub.fastgit.org/.insteadOf https://github.com/
 ```
 
 # Git
