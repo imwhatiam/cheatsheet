@@ -32,6 +32,13 @@ docker login
 
 ```
 
+```
+{
+  "registry-mirrors": ["https://0nth4654.mirror.aliyuncs.com"],
+  "insecure-registries": ["test.seafile.top"]
+}
+```
+
 ### run and exec
 
 将本地的 8123 端口映射到 Docker 容器的 8000 端口。
