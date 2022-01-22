@@ -1,4 +1,4 @@
-# 关于 Linux shell 你必须知道的技巧
+# shell
 
 **那么对于 Linux 命令行，本文不是介绍某些命令的用法，而是说明一些简单却特别容易让人迷惑的细节问题**。
 
@@ -10,7 +10,7 @@
 
 4、有的命令和`sudo`一起用就 command not found。
 
-### 一、标准输入和参数的区别
+## 标准输入和参数的区别
 
 这个问题一定是最容易让人迷惑的，具体来说，就是搞不清什么时候用管道符`|`和文件重定向`>`，`<`，什么时候用变量`$`。
 
@@ -54,7 +54,7 @@ hello world
 
 **如果命令能够让终端阻塞，说明该命令接收标准输入，反之就是不接受**，比如你只运行`cat`命令不加任何参数，终端就会阻塞，等待你输入字符串并回显相同的字符串。
 
-### 二、后台运行程序
+## 后台运行程序
 
 比如说你远程登录到服务器上，运行一个 Django web 程序：
 
@@ -90,7 +90,7 @@ $ nohup some_cmd &
 
 `nohup`命令也是类似的原理，不过通过我的测试，还是`(cmd &)`这种形式更加稳定。
 
-### 三、单引号和双引号的区别
+## 单引号和双引号的区别
 
 不同的 shell 行为会有细微区别，但有一点是确定的，**对于`$`，`(`，`)`这几个符号，单引号包围的字符串不会做任何转义，双引号包围的字符串会转义**。
 
@@ -102,7 +102,7 @@ shell 的行为可以测试，使用`set -x`命令，会开启 shell 的命令�
 
 **也就是说，如果 `$` 读取出的参数字符串包含空格，应该用双引号括起来，否则就会出错**。
 
-### 四、sudo 找不到命令
+## sudo 找不到命令
 
 有时候我们普通用户可以用的命令，用 `sudo` 加权限之后却报错 command not found：
 
@@ -127,4 +127,41 @@ $ where connect.sh
 
 ```shell
 $ sudo /home/fdl/bin/connect.sh
+```
+
+## .bash_profile
+
+```
+alias ll='ls -alF'
+alias e='exit'
+alias c='clear'
+
+# Git branch in prompt.
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\[\033[34m\]\t\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+# # brew install python@3.10
+#
+# # If you need to have python@3.10 first in your PATH, run:
+#
+# export PATH="/usr/local/opt/curl/bin:$PATH"
+# export PATH="/usr/local/opt/python@3.10/bin:$PATH"
+# export PATH="/usr/local/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin:$PATH"
+#
+# #For compilers to find python@3.10 you may need to set:
+# export LDFLAGS="-L/usr/local/opt/python@3.10/lib"
+#
+# # For pkg-config to find python@3.10 you may need to set:
+# export PKG_CONFIG_PATH="/usr/local/opt/python@3.10/lib/pkgconfig"
+#
+# export LDFLAGS="-L/usr/local/opt/curl/lib"
+# export CPPFLAGS="-I/usr/local/opt/curl/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
+
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+source /Users/lian/python3.10-venv/bin/activate
+source ~/.git-completion.bash
 ```
