@@ -126,6 +126,8 @@ du -sh directory
 
 # The `-s` is size, the `-h` is human readable.
 ls -sh filename
+
+find /var/lib/docker/overlay2/ -type f -size +100M -print0 | xargs -0 du -h | sort -nr
 ```
 
 ```
