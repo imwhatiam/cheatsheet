@@ -10,6 +10,31 @@ cat /etc/issue
 cat /etc/centos-release
 ```
 
+## 查看登录信息
+
+```
+[root@node3 ~]# last
+
+root     pts/0        43.224.44.74     Wed Nov 16 09:43   still logged in
+root     pts/2        114.249.209.248  Tue Nov  1 21:40 - 23:54  (02:13)
+root     pts/1        114.249.209.248  Tue Nov  1 20:41 - 23:57  (03:16)
+root     pts/0        114.249.209.248  Tue Nov  1 20:35 - 23:57  (03:21)
+root     pts/0        114.249.209.248  Tue Nov  1 19:42 - 20:35  (00:52)
+root     pts/0        54.179.196.89    Tue Nov  1 14:55 - 19:07  (04:11)
+root     pts/0        123.117.78.247   Tue Nov  1 14:52 - 14:53  (00:00)
+root     pts/0        123.117.78.247   Tue Nov  1 14:13 - 14:14  (00:01)
+reboot   system boot  3.10.0-1160.15.2 Tue Nov  1 22:12 - 10:04 (14+11:51)
+root     pts/0        114.249.233.212  Tue Feb 23 10:02 - crash (616+12:09)
+root     pts/1        114.249.233.212  Tue Feb 23 09:42 - 18:17  (08:35)
+root     pts/0        43.224.44.74     Tue Feb 23 09:41 - 09:42  (00:00)
+```
+
+```
+[root@node3 ~]# grep 154.91.227.231  /var/log/secure
+
+Nov 16 08:41:24 node3 sshd[143795]: Accepted password for root from 154.91.227.231 port 55592 ssh2
+```
+
 ## 快捷命令
 
 在 `~/.bash_profile` 或者 `~/.bashrc` 中增加以下命令
