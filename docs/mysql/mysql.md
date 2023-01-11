@@ -140,3 +140,17 @@ from information_schema.tables where TABLE_SCHEMA = 'seahub-demo'
 group by TABLE_NAME
 order by data_length desc;
 ```
+
+### select
+
+```
+select count(distinct username) from UserActivityStat where timestamp>='2022-01-01 00:00:00' and timestamp<="2022-12-31 23:59:59";
+
+select count(distinct user) from api2_token where created>='2022-01-01 00:00:00' and created<="2022-12-31 23:59:59";
+
+select count(distinct user) from api2_tokenv2 where created_at>='2022-01-01 00:00:00' and created_at<="2022-12-31 23:59:59";
+
+select count(distinct username) from base_userlastlogin where last_login>='2022-01-01 00:00:00' and last_login<="2022-12-31 23:59:59";
+
+select count(distinct op_user) from Activity where timestamp>='2022-01-01 00:00:00' and timestamp<="2022-12-31 23:59:59";
+```
