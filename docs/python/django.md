@@ -1,5 +1,39 @@
 # Django
 
+## Session
+
+```
+>>> from django.contrib.sessions.models import Session
+>>> s = Session.objects.get(pk='2b1189a188b44ad18c35e113ac6ceead')
+>>> s.expire_date
+datetime.datetime(2005, 8, 20, 13, 35, 12)
+>>> s.session_data
+'KGRwMQpTJ19hdXRoX3VzZXJfaWQnCnAyCkkxCnMuMTExY2ZjODI2Yj...'
+>>> s.get_decoded()
+{'user_id': 42}
+```
+
+## Database
+
+手动触发数据库事务的 commit 提交
+
+```
+from django.db import transaction
+from seahub.utils import gen_token
+
+token = gen_token(30) + gen_token(30)
+transaction.set_autocommit(False)
+try:
+    t = ClientSSOToken(token=token)
+    t.save()
+    transaction.commit()
+except Exception as e:
+    logger.error(e)
+    transaction.rollback()
+finally:
+    transaction.set_autocommit(True)
+```
+
 ## USE_TZ and TIME_ZONE
 
 ### 当配置了 `USE_TZ = True`

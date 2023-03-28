@@ -69,6 +69,11 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 fab859fcf1ad        ubuntu:latest       "/bin/bash"         4 seconds ago       Up 3 seconds                0.0.0.0:8123->8000/tcp   quirky_hopper
 ```
 
+只显示某几列信息
+```
+docker ps -a --format "{{.ID}}\t{{.Names}}\t{{.Image}}"
+```
+
 ### port
 
 ```
@@ -242,8 +247,7 @@ RUN apt-get install -qy --no-install-recommends pkg-config \
 
 # RUN rm -rf /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-RUN ln -s /usr/bin/python3 /usr/bin/python && \
-    ln -s /usr/bin/pip3 /usr/bin/pip
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 RUN pip install wheel && \
     pip install --upgrade django ipython pip

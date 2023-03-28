@@ -40,3 +40,97 @@ logging.critical('critical message')
 %(process)d 进程ID。可能没有
 %(message)s用户输出的消息
 ```
+
+## Django logging
+
+代码文件中，直接可以 get 到自定义的 onlyoffice logger，使用自定义的 onlyoffice logger 来处理。
+```
+logger = logging.getLogger('onlyoffice')
+```
+
+代码文件中(`seahub/api2/endpoints/upload_links.py`)，get logger 时，获取到的是 `__name__`（`seahub.api2.endpoints.upload_links`），按层级关系依次向上寻找 logger。
+```
+logger = logging.getLogger(__name__)
+logger.error('in upload link')
+```
+
+如果自定义或者层级关系均未找到 logger，则使用 root（或 `''`）定义的 logger。
+
+settins.py
+
+```
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'formatters': {
+        'upload_link_format': {
+            'format': '%(lineno)s %(funcName)s %(message)s',
+
+        },
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s:%(lineno)s %(funcName)s %(message)s',
+
+        }
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
+        },
+    },
+    'handlers': {
+        'upload_link_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'upload_link_format',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard',
+        },
+        'default': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'seahub.log'),
+            'maxBytes': 1024*1024*100,  # 100 MB
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
+        'onlyoffice_handler': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'onlyoffice.log'),
+            'maxBytes': 1024*1024*100,  # 100 MB
+            'backupCount': 5,
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        '': {  # 默认 logger
+            'handlers': ['default'],
+            'level': 'INFO',
+            'propagate': True
+        },
+        'seahub.api2.endpoints': {  # 按层级关系依次向上寻找 logger
+            'handlers': ['upload_link_handler', ],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'onlyoffice': {  # 自定义的 onlyoffice logger
+            'handlers': ['onlyoffice_handler', ],
+            'level': 'INFO',
+            'propagate': False
+        },
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': "DEBUG",
+            'propagate': False,
+        },
+    }
+}
+```
