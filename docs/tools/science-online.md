@@ -1,6 +1,30 @@
 # tools/science-online.md
 
+## Shadowsocks
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install vim git wget curl tmux
+sudo apt install shadowsocks-libev
+
+reboot
+
+vi /etc/shadowsocks-libev/config.json
+
+sudo systemctl restart shadowsocks-libev
+sudo systemctl status shadowsocks-libev
+sudo systemctl enable shadowsocks-libev
+
+cat /etc/shadowsocks-libev/config.json
+
+sudo iptables -I INPUT -p tcp --dport 8388 -j ACCEPT
+sudo iptables -I INPUT -p udp --dport 8388 -j ACCEPT
+sudo ufw allow 8388
+```
+
 ## create ssh tunnel
+
 ```
 ssh -qTfnN -D 1080 root@demo.seafile.com
 ```
@@ -10,25 +34,4 @@ ssh -qTfnN -D 1080 root@demo.seafile.com
 - -f: 登录成功后即转为后台任务执行
 - -n: 重定向stdin为/dev/null，用于配合-f后台任务
 - -N: 不执行远程命令（专门做端口转发）
-
-## install and configure privoxy
-
-to redirect http{s} requests to socks5
-```
-apt install privoxy
-vim /etc/privoxy/config
-```
-
-```
-forward-socks5t   /               127.0.0.1:1080 .
-```
-
-```
-systemctl restart privoxy
-```
-
-## configure proxy
-```
-export http_proxy="127.0.0.1:8118"
-export https_proxy="127.0.0.1:8118"
 ```
