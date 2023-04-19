@@ -286,6 +286,9 @@ apt install net-tools
 netstat -tlnp | grep 8000
 
 lsof -i:8000
+
+# for MAC
+lsof -iTCP -sTCP:LISTEN -n -P
 ```
 
 ```
@@ -403,7 +406,7 @@ find \<指定目录> \<指定条件> \<指定动作>
 recursively delete all files of a specific extension in the current dir
 
 ```
-find . -type f -name "*.bak" -type f -delete
+find . -type f -name "*.bak"
 ```
 
 ```

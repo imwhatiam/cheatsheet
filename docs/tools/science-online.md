@@ -2,6 +2,59 @@
 
 ## Shadowsocks
 
+### ss-local
+
+https://github.com/shadowsocks/ShadowsocksX-NG
+
+test if ss-local works
+```
+curl --socks5 127.0.0.1:1080 http://cip.cc
+```
+
+### ssserver
+
+#### pip install shadowsocks
+
+tested on ubuntu 18.04
+
+```
+pip install shadowsocks
+```
+
+create configuration file
+```
+vim /etc/shadowsocks.json
+{
+    "server":"server ip",
+    "server_port":8388,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"yourpassword",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false
+}
+```
+
+start ssserver
+```
+ssserver -c /etc/shadowsocks.json -d start
+```
+
+if the following error occurs
+```
+AttributeError: /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1: undefined symbol: EVP_CIPHER_CTX_cleanup
+```
+
+then
+```
+vi /usr/local/lib/python3.6/dist-packages/shadowsocks/crypto/openssl.py
+
+%s/EVP_CIPHER_CTX_cleanup/EVP_CIPHER_CTX_reset/gc
+```
+
+#### apt install shadowsocks-libev
+
 ```
 sudo apt update
 sudo apt upgrade
