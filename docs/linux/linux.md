@@ -1,5 +1,9 @@
 # Linux 命令
 
+```
+python /root/scripts/start.py >> /var/log/start.log 2>&1
+```
+
 ## check Linux version
 
 ```
