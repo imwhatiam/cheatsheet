@@ -39,6 +39,8 @@ nav:
       - docker/docker.md
     - OnlyOffice:
       - onlyoffice/onlyoffice.md
+    - CollaboraOffice:
+      - collabora-office/code.md
     - tools:
       - regex: tools/regex.md
       - vim: tools/vim.md
