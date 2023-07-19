@@ -1,10 +1,3 @@
-
-```
-git remote add cdn https://github.com.cnpmjs.org/haiwen/seahub.git
-
-git config --global url.https://hub.fastgit.org/.insteadOf https://github.com/
-```
-
 # Git
 
 git里的三个区域概念：
@@ -24,6 +17,28 @@ git中还有三类常用对象：
 * commit：用于表示一次提交(commit)
 
 ![Git](../images/git.png)
+
+## proxy
+
+### 国内镜像
+
+```
+git remote add cdn https://github.com.cnpmjs.org/haiwen/seahub.git
+
+git config --global url.https://hub.fastgit.org/.insteadOf https://github.com/
+```
+
+### ssh 代理
+
+How to force Git to use socks proxy over its ssh connection
+
+```
+vim ~/.ssh/config
+Host github.com
+HostName github.com
+User git
+ProxyCommand nc -v -x 127.0.0.1:1080 %h %p
+```
 
 ## git command
 

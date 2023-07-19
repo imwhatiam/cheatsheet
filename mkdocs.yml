@@ -35,6 +35,8 @@ nav:
     - Mysql:
       - mysql/mysql.md
       - mysql/troubleshoot.md
+    - Network:
+      - network/http.md
     - Docker:
       - docker/docker.md
     - OnlyOffice:
