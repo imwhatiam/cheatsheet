@@ -304,3 +304,10 @@ INT 类型，占用 4 个字节，每字节 8 个比特，即总共占用 32 个
 
 建表语句 `id int(11) unsigned NOT NULL AUTO_INCREMENT,` 中的 `11`，只表示可显示的位数，与实际存储长度无关。
 
+
+## 中文显示为 ？？？？？
+
+```
+show variables like 'character%';
+set names utf8mb4;
+```
