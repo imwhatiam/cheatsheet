@@ -10,6 +10,7 @@ theme:
 
 nav:
     - Home: index.md
+    - AI: AI/chatGPT.md
     - Seafile:
       - common conf: seafile/conf.md
       - CAS: seafile/cas/cas.md
