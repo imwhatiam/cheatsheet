@@ -12,6 +12,12 @@ datetime.datetime(2005, 8, 20, 13, 35, 12)
 >>> s.get_decoded()
 {'user_id': 42}
 ```
+```
+>>> from django.contrib.sessions.backends.db import SessionStore
+>>> s = SessionStore()
+>>> s_data = ".eJxVjEEKwjAQAP-yZymbtomJJ_UjYTddqWhbyTaoiH-3RRC8DjPzgiyDDCw5DgK7ORfZQKQy97HoAkdaMQTyLbNhzxjarjaek_O1NQFdwpN1-7WorlOiK_z1TOkiYxfrZaJCfeGKSaWilKYyzlodFvX4ldZSRfU8jVEet3N-ws5h6xE3cCPV-5S7n_ADPWkfL7K4wLY2fApbRkOI6H0jDTvDNtjGNMbB-wMgXU_Z:1rGcFf:4Y53efIteKjKKAkWbOHhT3D6n3Yk0Z_vca2yDP8N-Dc"
+>>> decoded_data = s.decode(s_data)
+```
 
 ## Database
 
