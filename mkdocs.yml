@@ -44,6 +44,9 @@ nav:
       - onlyoffice/onlyoffice.md
     - CollaboraOffice:
       - collabora-office/code.md
+    - MacOS:
+      - macos/vimrc.md
+      - macos/bash_profile.md
     - tools:
       - regex: tools/regex.md
       - vim: tools/vim.md
