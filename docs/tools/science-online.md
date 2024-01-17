@@ -68,7 +68,7 @@ npm config delete proxy
 npm config delete https-proxy
 ```
 
-### ssh 中位 github.com 设置 socks5 代理
+### github.com 设置 socks5 代理
 
 ```
 vi ~/.ssh/config
@@ -87,6 +87,12 @@ export https_proxy="socks5://127.0.0.1:1080"
 
 # 取消所有 socks 代理
 unset all_proxy && unset ALL_PROXY
+```
+
+### curl 设置 socks5 代理
+
+```
+curl --socks5-hostname localhost:1080 http://www.google.com/
 ```
 
 ## Shadowsocks
