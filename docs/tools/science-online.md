@@ -13,6 +13,22 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 trusted-host = https://pypi.tuna.tsinghua.edu.cn
 ```
 
+### npm
+
+```
+// 查询源
+npm config get registry
+
+// 更换国内源
+npm config set registry https://registry.npmmirror.com
+
+// 恢复官方源
+npm config set registry https://registry.npmjs.org
+
+// 删除注册表
+npm config delete registry
+```
+
 ### github
 
 ```
