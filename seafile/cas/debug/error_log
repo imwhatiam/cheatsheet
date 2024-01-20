@@ -1,0 +1,7 @@
+[Fri Jul 26 19:18:27.715897 2019] [suexec:notice] [pid 32515] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.17.30.63. Set the 'ServerName' directive globally to suppress this message
+[Fri Jul 26 19:18:27.739359 2019] [auth_digest:notice] [pid 32515] AH01757: generating secret for digest authentication ...
+[Fri Jul 26 19:18:27.739888 2019] [lbmethod_heartbeat:notice] [pid 32515] AH02282: No slotmem from mod_heartmonitor
+[Fri Jul 26 19:18:27.740149 2019] [ssl:warn] [pid 32515] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Jul 26 19:18:27.744075 2019] [mpm_prefork:notice] [pid 32515] AH00163: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips mod_auth_kerb/5.4 configured -- resuming normal operations
+[Fri Jul 26 19:18:27.744102 2019] [core:notice] [pid 32515] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
