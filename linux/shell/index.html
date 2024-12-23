@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>shell - lian's cheatsheet</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">lian's cheatsheet</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../AI/chatGPT/" class="nav-link">AI</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Seafile</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../seafile/conf/" class="dropdown-item">common conf</a>
+</li>
+                                    
+<li>
+    <a href="../../seafile/cas/cas/" class="dropdown-item">CAS</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../seafile/scripts/upload-file.py" class="dropdown-item">upload-file.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/django/" class="dropdown-item">django</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/base64/" class="dropdown-item">base64</a>
+</li>
+                                    
+<li>
+    <a href="../../python/pil/" class="dropdown-item">PIL</a>
+</li>
+                                    
+<li>
+    <a href="../../python/ldap/" class="dropdown-item">ldap</a>
+</li>
+                                    
+<li>
+    <a href="../../python/restful-api/" class="dropdown-item">restful-api</a>
+</li>
+                                    
+<li>
+    <a href="../../python/elasticsearch/" class="dropdown-item">elasticsearch</a>
+</li>
+                                    
+<li>
+    <a href="../../python/notebook/" class="dropdown-item">notebook</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/scripts/auto-toc.py" class="dropdown-item">auto-toc.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">saml2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../saml2/saml2/" class="dropdown-item">saml2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../linux/" class="dropdown-item">Linux 命令</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">shell</a>
+</li>
+                                    
+<li>
+    <a href="../process-and-thread/" class="dropdown-item">Linux的进程、线程、文件描述符是什么</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mysql</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../mysql/mysql/" class="dropdown-item">MySql</a>
+</li>
+                                    
+<li>
+    <a href="../../mysql/troubleshoot/" class="dropdown-item">MySql Troubleshoot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Network</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../network/http/" class="dropdown-item">HTTP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Docker</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../docker/docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">OnlyOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../onlyoffice/onlyoffice/" class="dropdown-item">OnlyOffice</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">CollaboraOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../collabora-office/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">MacOS</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../macos/vimrc/" class="dropdown-item">Vimrc</a>
+</li>
+                                    
+<li>
+    <a href="../../macos/bash_profile/" class="dropdown-item">Bash profile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tools</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tools/regex/" class="dropdown-item">regex</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/vim/" class="dropdown-item">vim</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/git/" class="dropdown-item">git</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/tmux/" class="dropdown-item">tmux</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/nginx/" class="dropdown-item">nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/certbot/" class="dropdown-item">certbot</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/memcached/" class="dropdown-item">memcached</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/science-online/" class="dropdown-item">science online</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/ngrok/" class="dropdown-item">ngrok</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../linux/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../process-and-thread/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#shell" class="nav-link">shell</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">标准输入和参数的区别</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">后台运行程序</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">单引号和双引号的区别</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sudo" class="nav-link">sudo 找不到命令</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bash_profile" class="nav-link">.bash_profile</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="shell">shell</h1>
+<p><strong>那么对于 Linux 命令行，本文不是介绍某些命令的用法，而是说明一些简单却特别容易让人迷惑的细节问题</strong>。</p>
+<p>1、标准输入和命令参数的区别。</p>
+<p>2、在后台运行命令在退出终端后也全部退出了。</p>
+<p>3、单引号和双引号表示字符串的区别。</p>
+<p>4、有的命令和<code>sudo</code>一起用就 command not found。</p>
+<h2 id="_1">标准输入和参数的区别</h2>
+<p>这个问题一定是最容易让人迷惑的，具体来说，就是搞不清什么时候用管道符<code>|</code>和文件重定向<code>&gt;</code>，<code>&lt;</code>，什么时候用变量<code>$</code>。</p>
+<p>比如说，我现在有个自动连接宽带的 shell 脚本<code>connect.sh</code>，存在我的家目录：</p>
+<pre><code class="language-shell">$ where connect.sh
+/home/fdl/bin/connect.sh
+</code></pre>
+<p>如果我想删除这个脚本，而且想少敲几次键盘，应该怎么操作呢？我曾经这样尝试过：</p>
+<pre><code class="language-shell">$ where connect.sh | rm
+</code></pre>
+<p>实际上，这样操作是错误的，正确的做法应该是这样的：</p>
+<pre><code class="language-shell">$ rm $(where connect.sh)
+</code></pre>
+<p>前者试图将<code>where</code>的结果连接到<code>rm</code>的标准输入，后者试图将结果作为命令行参数传入。</p>
+<p><strong>标准输入就是编程语言中诸如<code>scanf</code>或者<code>readline</code>这种命令；而参数是指程序的<code>main</code>函数传入的<code>args</code>字符数组</strong>。</p>
+<p>前文「Linux文件描述符」说过，管道符和重定向符是将数据作为程序的标准输入，而<code>$(cmd)</code>是读取<code>cmd</code>命令输出的数据作为参数。</p>
+<p>用刚才的例子说，<code>rm</code>命令源代码中肯定不接受标准输入，而是接收命令行参数，删除相应的文件。作为对比，<code>cat</code>命令是既接受标准输入，又接受命令行参数：</p>
+<pre><code class="language-shell">$ cat filename
+...file text...
+
+$ cat &lt; filename
+...file text...
+
+$ echo 'hello world' | cat
+hello world
+</code></pre>
+<p><strong>如果命令能够让终端阻塞，说明该命令接收标准输入，反之就是不接受</strong>，比如你只运行<code>cat</code>命令不加任何参数，终端就会阻塞，等待你输入字符串并回显相同的字符串。</p>
+<h2 id="_2">后台运行程序</h2>
+<p>比如说你远程登录到服务器上，运行一个 Django web 程序：</p>
+<pre><code class="language-shell">$ python manager.py runserver 0.0.0.0
+Listening on 0.0.0.0:8080...
+</code></pre>
+<p>现在你可以通过服务器的 IP 地址测试 Django 服务，但是终端此时就阻塞了，你输入什么都不响应，除非输入 Ctrl-C 或者 Ctrl-/ 终止 python 进程。</p>
+<p>可以在命令之后加一个<code>&amp;</code>符号，这样命令行不会阻塞，可以响应你后续输入的命令，但是如果你退出服务器的登录，就不能访问该网页了。</p>
+<p>如果你想在退出服务器之后仍然能够访问 web 服务，应该这样写命令 <code>(cmd &amp;)</code>：</p>
+<pre><code class="language-shell">$ (python manager.py runserver 0.0.0.0 &amp;)
+Listening on 0.0.0.0:8080...
+
+$ logout
+</code></pre>
+<p><strong>底层原理是这样的</strong>：</p>
+<p>每一个命令行终端都是一个 shell 进程，你在这个终端里执行的程序实际上都是这个 shell 进程分出来的子进程。正常情况下，shell 进程会阻塞，等待子进程退出才重新接收你输入的新的命令。加上<code>&amp;</code>号，只是让 shell 进程不再阻塞，可以继续响应你的新命令。但是无论如何，你如果关掉了这个 shell 命令行端口，依附于它的所有子进程都会退出。</p>
+<p>而<code>(cmd &amp;)</code>这样运行命令，则是将<code>cmd</code>命令挂到一个<code>systemd</code>系统守护进程名下，认<code>systemd</code>做爸爸，这样当你退出当前终端时，对于刚才的<code>cmd</code>命令就完全没有影响了。</p>
+<p>类似的，还有一种后台运行常用的做法是这样：</p>
+<pre><code class="language-shell">$ nohup some_cmd &amp;
+</code></pre>
+<p><code>nohup</code>命令也是类似的原理，不过通过我的测试，还是<code>(cmd &amp;)</code>这种形式更加稳定。</p>
+<h2 id="_3">单引号和双引号的区别</h2>
+<p>不同的 shell 行为会有细微区别，但有一点是确定的，<strong>对于<code>$</code>，<code>(</code>，<code>)</code>这几个符号，单引号包围的字符串不会做任何转义，双引号包围的字符串会转义</strong>。</p>
+<p>shell 的行为可以测试，使用<code>set -x</code>命令，会开启 shell 的命令回显，你可以通过回显观察 shell 到底在执行什么命令：</p>
+<p><img alt="" src="../../images/shell.png" /></p>
+<p>可见 <code>echo $(cmd)</code> 和 <code>echo "$(cmd)"</code>，结果差不多，但是仍然有区别。注意观察，双引号转义完成的结果会自动增加单引号，而前者不会。</p>
+<p><strong>也就是说，如果 <code>$</code> 读取出的参数字符串包含空格，应该用双引号括起来，否则就会出错</strong>。</p>
+<h2 id="sudo">sudo 找不到命令</h2>
+<p>有时候我们普通用户可以用的命令，用 <code>sudo</code> 加权限之后却报错 command not found：</p>
+<pre><code class="language-shell">$ connect.sh
+network-manager: Permission denied
+
+$ sudo connect.sh
+sudo: command not found
+</code></pre>
+<p>原因在于，<code>connect.sh</code> 这个脚本仅存在于该用户的环境变量中：</p>
+<pre><code class="language-shell">$ where connect.sh 
+/home/fdl/bin/connect.sh
+</code></pre>
+<p><strong>当使用 <code>sudo</code> 时，系统会使用 <code>/etc/sudoers</code> 这个文件中规定的该用户的权限和环境变量</strong>，而这个脚本在 <code>/etc/sudoers</code> 环境变量目录中当然是找不到的。</p>
+<p>解决方法是使用脚本文件的路径，而不是仅仅通过脚本名称：</p>
+<pre><code class="language-shell">$ sudo /home/fdl/bin/connect.sh
+</code></pre>
+<h2 id="bash_profile">.bash_profile</h2>
+<pre><code>alias ll='ls -alF'
+alias e='exit'
+alias c='clear'
+
+# Git branch in prompt.
+parse_git_branch() {
+  git branch 2&gt; /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1=&quot;\[\033[34m\]\t\[\033[00m\] \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ &quot;
+
+# # brew install python@3.10
+#
+# # If you need to have python@3.10 first in your PATH, run:
+#
+# export PATH=&quot;/usr/local/opt/curl/bin:$PATH&quot;
+# export PATH=&quot;/usr/local/opt/python@3.10/bin:$PATH&quot;
+# export PATH=&quot;/usr/local/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin:$PATH&quot;
+#
+# #For compilers to find python@3.10 you may need to set:
+# export LDFLAGS=&quot;-L/usr/local/opt/python@3.10/lib&quot;
+#
+# # For pkg-config to find python@3.10 you may need to set:
+# export PKG_CONFIG_PATH=&quot;/usr/local/opt/python@3.10/lib/pkgconfig&quot;
+#
+# export LDFLAGS=&quot;-L/usr/local/opt/curl/lib&quot;
+# export CPPFLAGS=&quot;-I/usr/local/opt/curl/include&quot;
+# export PKG_CONFIG_PATH=&quot;/usr/local/opt/curl/lib/pkgconfig&quot;
+
+[[ -r &quot;/usr/local/etc/profile.d/bash_completion.sh&quot; ]] &amp;&amp; . &quot;/usr/local/etc/profile.d/bash_completion.sh&quot;
+
+source /Users/lian/python3.10-venv/bin/activate
+source ~/.git-completion.bash
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

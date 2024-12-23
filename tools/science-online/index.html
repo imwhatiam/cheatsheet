@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>science online - lian's cheatsheet</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">lian's cheatsheet</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../AI/chatGPT/" class="nav-link">AI</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Seafile</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../seafile/conf/" class="dropdown-item">common conf</a>
+</li>
+                                    
+<li>
+    <a href="../../seafile/cas/cas/" class="dropdown-item">CAS</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../seafile/scripts/upload-file.py" class="dropdown-item">upload-file.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/django/" class="dropdown-item">django</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/base64/" class="dropdown-item">base64</a>
+</li>
+                                    
+<li>
+    <a href="../../python/pil/" class="dropdown-item">PIL</a>
+</li>
+                                    
+<li>
+    <a href="../../python/ldap/" class="dropdown-item">ldap</a>
+</li>
+                                    
+<li>
+    <a href="../../python/restful-api/" class="dropdown-item">restful-api</a>
+</li>
+                                    
+<li>
+    <a href="../../python/elasticsearch/" class="dropdown-item">elasticsearch</a>
+</li>
+                                    
+<li>
+    <a href="../../python/notebook/" class="dropdown-item">notebook</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/scripts/auto-toc.py" class="dropdown-item">auto-toc.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">saml2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../saml2/saml2/" class="dropdown-item">saml2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux/linux/" class="dropdown-item">Linux 命令</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/shell/" class="dropdown-item">shell</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/process-and-thread/" class="dropdown-item">Linux的进程、线程、文件描述符是什么</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mysql</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../mysql/mysql/" class="dropdown-item">MySql</a>
+</li>
+                                    
+<li>
+    <a href="../../mysql/troubleshoot/" class="dropdown-item">MySql Troubleshoot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Network</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../network/http/" class="dropdown-item">HTTP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Docker</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../docker/docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">OnlyOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../onlyoffice/onlyoffice/" class="dropdown-item">OnlyOffice</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">CollaboraOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../collabora-office/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">MacOS</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../macos/vimrc/" class="dropdown-item">Vimrc</a>
+</li>
+                                    
+<li>
+    <a href="../../macos/bash_profile/" class="dropdown-item">Bash profile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tools</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">regex</a>
+</li>
+                                    
+<li>
+    <a href="../vim/" class="dropdown-item">vim</a>
+</li>
+                                    
+<li>
+    <a href="../git/" class="dropdown-item">git</a>
+</li>
+                                    
+<li>
+    <a href="../tmux/" class="dropdown-item">tmux</a>
+</li>
+                                    
+<li>
+    <a href="../nginx/" class="dropdown-item">nginx</a>
+</li>
+                                    
+<li>
+    <a href="../certbot/" class="dropdown-item">certbot</a>
+</li>
+                                    
+<li>
+    <a href="../memcached/" class="dropdown-item">memcached</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">science online</a>
+</li>
+                                    
+<li>
+    <a href="../ngrok/" class="dropdown-item">ngrok</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../memcached/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ngrok/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#science-online" class="nav-link">Science Online</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">国内源</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#create-ssh-tunnel" class="nav-link">create ssh tunnel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#shadowsocks" class="nav-link">Shadowsocks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="science-online">Science Online</h1>
+<h2 id="_1">国内源</h2>
+<h3 id="pip">pip</h3>
+<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+
+vi ~/.pip/pip.conf
+
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host = https://pypi.tuna.tsinghua.edu.cn
+</code></pre>
+<h3 id="npm">npm</h3>
+<pre><code>// 查询源
+npm config get registry
+
+// 更换国内源
+npm config set registry https://registry.npmmirror.com
+
+// 恢复官方源
+npm config set registry https://registry.npmjs.org
+
+// 删除注册表
+npm config delete registry
+</code></pre>
+<h3 id="github">github</h3>
+<pre><code>git config --global url.https://kkgithub.com/.insteadOf https://github.com/
+</code></pre>
+<h3 id="homebrew">homebrew</h3>
+<p>https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/</p>
+<pre><code>export HOMEBREW_API_DOMAIN=&quot;https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api&quot;
+export HOMEBREW_BOTTLE_DOMAIN=&quot;https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles&quot;
+export HOMEBREW_BREW_GIT_REMOTE=&quot;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git&quot;
+export HOMEBREW_CORE_GIT_REMOTE=&quot;https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git&quot;
+export HOMEBREW_PIP_INDEX_URL=&quot;https://pypi.tuna.tsinghua.edu.cn/simple&quot;
+
+git clone --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git brew-install
+/bin/bash brew-install/install.sh
+rm -rf brew-install
+
+brew update
+</code></pre>
+<h2 id="create-ssh-tunnel">create ssh tunnel</h2>
+<pre><code>ssh -qTfnN -D 1080 root@example.com
+</code></pre>
+<ul>
+<li>-q: quiet模式，忽视大部分的警告和诊断信息（比如端口转发时的各种连接错误）</li>
+<li>-T: 禁用tty分配(pseudo-terminal allocation)</li>
+<li>-f: 登录成功后即转为后台任务执行</li>
+<li>-n: 重定向stdin为/dev/null，用于配合-f后台任务</li>
+<li>-N: 不执行远程命令（专门做端口转发）</li>
+</ul>
+<h3 id="git-socks5">git 设置 socks5 代理</h3>
+<pre><code>git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+</code></pre>
+<h3 id="npm-socks5">npm 设置 socks5 代理</h3>
+<pre><code>npm install --registry=https://registry.npm.taobao.org
+
+npm config set proxy socks5://127.0.0.1:1080
+npm config set https-proxy socks5://127.0.0.1:1080
+
+npm config delete proxy
+npm config delete https-proxy
+</code></pre>
+<h3 id="githubcom-socks5">github.com 设置 socks5 代理</h3>
+<pre><code>vi ~/.ssh/config
+
+Host github.com
+    HostName github.com
+    User git
+    ProxyCommand nc -v -x 127.0.0.1:1080 %h %p
+</code></pre>
+<h3 id="bash">bash 设置全局代理</h3>
+<pre><code>export http_proxy=&quot;socks5://127.0.0.1:1080&quot;
+export https_proxy=&quot;socks5://127.0.0.1:1080&quot;
+
+# 取消所有 socks 代理
+unset all_proxy &amp;&amp; unset ALL_PROXY
+</code></pre>
+<h3 id="curl-socks5">curl 设置 socks5 代理</h3>
+<pre><code>curl --socks5-hostname localhost:1080 http://www.google.com/
+</code></pre>
+<h2 id="shadowsocks">Shadowsocks</h2>
+<h3 id="ss-local">ss-local</h3>
+<p><a href="https://github.com/shadowsocks/ShadowsocksX-NG">https://github.com/shadowsocks/ShadowsocksX-NG</a></p>
+<p>test if ss-local works</p>
+<pre><code>curl --socks5 127.0.0.1:1080 http://cip.cc
+
+</code></pre>
+<h3 id="ssserver">ssserver</h3>
+<h4 id="pip-install-shadowsocks">pip install shadowsocks</h4>
+<p>tested on ubuntu 18.04</p>
+<pre><code>pip install shadowsocks
+
+</code></pre>
+<p>create configuration file</p>
+<pre><code>vim /etc/shadowsocks.json
+{
+    &quot;server&quot;:&quot;server ip&quot;,
+    &quot;server_port&quot;:8388,
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;yourpassword&quot;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;: false
+}
+
+</code></pre>
+<p>start ssserver</p>
+<pre><code>ssserver -c /etc/shadowsocks.json -d start
+
+</code></pre>
+<p>if the following error occurs</p>
+<pre><code>AttributeError: /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1: undefined symbol: EVP_CIPHER_CTX_cleanup
+
+</code></pre>
+<p>then</p>
+<pre><code>vi /usr/local/lib/python3.6/dist-packages/shadowsocks/crypto/openssl.py
+
+%s/EVP_CIPHER_CTX_cleanup/EVP_CIPHER_CTX_reset/gc
+
+</code></pre>
+<h4 id="apt-install-shadowsocks-libev">apt install shadowsocks-libev</h4>
+<pre><code>sudo apt update
+sudo apt upgrade
+sudo apt install vim git wget curl tmux
+sudo apt install shadowsocks-libev
+
+reboot
+
+vi /etc/shadowsocks-libev/config.json
+
+sudo systemctl restart shadowsocks-libev
+sudo systemctl status shadowsocks-libev
+sudo systemctl enable shadowsocks-libev
+
+cat /etc/shadowsocks-libev/config.json
+
+sudo iptables -I INPUT -p tcp --dport 8388 -j ACCEPT
+sudo iptables -I INPUT -p udp --dport 8388 -j ACCEPT
+sudo ufw allow 8388
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

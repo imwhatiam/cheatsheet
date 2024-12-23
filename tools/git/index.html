@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>git - lian's cheatsheet</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">lian's cheatsheet</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../AI/chatGPT/" class="nav-link">AI</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Seafile</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../seafile/conf/" class="dropdown-item">common conf</a>
+</li>
+                                    
+<li>
+    <a href="../../seafile/cas/cas/" class="dropdown-item">CAS</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../seafile/scripts/upload-file.py" class="dropdown-item">upload-file.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/django/" class="dropdown-item">django</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/base64/" class="dropdown-item">base64</a>
+</li>
+                                    
+<li>
+    <a href="../../python/pil/" class="dropdown-item">PIL</a>
+</li>
+                                    
+<li>
+    <a href="../../python/ldap/" class="dropdown-item">ldap</a>
+</li>
+                                    
+<li>
+    <a href="../../python/restful-api/" class="dropdown-item">restful-api</a>
+</li>
+                                    
+<li>
+    <a href="../../python/elasticsearch/" class="dropdown-item">elasticsearch</a>
+</li>
+                                    
+<li>
+    <a href="../../python/notebook/" class="dropdown-item">notebook</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/scripts/auto-toc.py" class="dropdown-item">auto-toc.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">saml2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../saml2/saml2/" class="dropdown-item">saml2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux/linux/" class="dropdown-item">Linux 命令</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/shell/" class="dropdown-item">shell</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/process-and-thread/" class="dropdown-item">Linux的进程、线程、文件描述符是什么</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mysql</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../mysql/mysql/" class="dropdown-item">MySql</a>
+</li>
+                                    
+<li>
+    <a href="../../mysql/troubleshoot/" class="dropdown-item">MySql Troubleshoot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Network</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../network/http/" class="dropdown-item">HTTP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Docker</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../docker/docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">OnlyOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../onlyoffice/onlyoffice/" class="dropdown-item">OnlyOffice</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">CollaboraOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../collabora-office/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">MacOS</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../macos/vimrc/" class="dropdown-item">Vimrc</a>
+</li>
+                                    
+<li>
+    <a href="../../macos/bash_profile/" class="dropdown-item">Bash profile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tools</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">regex</a>
+</li>
+                                    
+<li>
+    <a href="../vim/" class="dropdown-item">vim</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">git</a>
+</li>
+                                    
+<li>
+    <a href="../tmux/" class="dropdown-item">tmux</a>
+</li>
+                                    
+<li>
+    <a href="../nginx/" class="dropdown-item">nginx</a>
+</li>
+                                    
+<li>
+    <a href="../certbot/" class="dropdown-item">certbot</a>
+</li>
+                                    
+<li>
+    <a href="../memcached/" class="dropdown-item">memcached</a>
+</li>
+                                    
+<li>
+    <a href="../science-online/" class="dropdown-item">science online</a>
+</li>
+                                    
+<li>
+    <a href="../ngrok/" class="dropdown-item">ngrok</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../vim/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../tmux/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#git" class="nav-link">Git</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#proxy" class="nav-link">proxy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#git-command" class="nav-link">git command</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mac-git" class="nav-link">mac 下 git 命令自动补全</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="git">Git</h1>
+<p>git里的三个区域概念：</p>
+<ul>
+<li>
+<p>working directory：就是你所操作的那些文件</p>
+</li>
+<li>
+<p>stage(index)：暂存区域，本质上是个文件，也就是.git/index</p>
+</li>
+<li>
+<p>history：你所提交的所有记录，文件历史内容等等。git是个分布式版本管理系统，在你本地有项目的所有历史提交记录；文件历史记录；提交日志等等。</p>
+</li>
+</ul>
+<p>git中还有三类常用对象：</p>
+<ul>
+<li>
+<p>blob：用于表示一个文件</p>
+</li>
+<li>
+<p>tree：用于表示一个目录，索引到若干文件或子目录</p>
+</li>
+<li>
+<p>commit：用于表示一次提交(commit)</p>
+</li>
+</ul>
+<p><img alt="Git" src="../../images/git.png" /></p>
+<h2 id="proxy">proxy</h2>
+<h3 id="_1">国内镜像</h3>
+<pre><code>git remote add cdn https://github.com.cnpmjs.org/haiwen/seahub.git
+
+git config --global url.https://hub.fastgit.org/.insteadOf https://github.com/
+</code></pre>
+<h3 id="ssh">ssh 代理</h3>
+<p>How to force Git to use socks proxy over its ssh connection</p>
+<pre><code>vim ~/.ssh/config
+Host github.com
+HostName github.com
+User git
+ProxyCommand nc -v -x 127.0.0.1:1080 %h %p
+</code></pre>
+<h2 id="git-command">git command</h2>
+<h3 id="git-reset">git reset</h3>
+<ul>
+<li>
+<p><code>git reset HEAD^ a.py</code>：回退a.py这个文件的版本到上一个版本</p>
+</li>
+<li>
+<p><code>git reset HEAD~1</code>：默认为 <code>--mixed</code>, <code>git status</code> 后为 Changes not staged for commit, 即 <code>git add</code> 之前的状态。</p>
+</li>
+<li>
+<p><code>git reset --soft HEAD~1</code>：<code>git status</code> 后为 Changes to be committed, 即 <code>git add</code> 之后的状态。</p>
+</li>
+<li>
+<p><code>git reset --hard HEAD~1</code>：所有更改都被丢弃</p>
+</li>
+</ul>
+<h3 id="git-stash">git stash</h3>
+<ul>
+<li>
+<p><code>git stash</code>：备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。</p>
+</li>
+<li>
+<p><code>git stash pop</code>：从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。</p>
+</li>
+<li>
+<p><code>git stash list</code>：显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。</p>
+</li>
+<li>
+<p><code>git stash clear</code>：清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了</p>
+</li>
+</ul>
+<h3 id="git-show">git show</h3>
+<ul>
+<li>
+<p><code>git show ebff</code>：查 log 是 commit ebff810c461ad1924fc422fd1d01db23d858773b 的內容</p>
+</li>
+<li>
+<p><code>git show v1</code>：查 tag:v1 的修改內容</p>
+</li>
+<li>
+<p><code>git show v1:test.txt</code>：查 tag:v1 的 test.txt 檔案修改內容</p>
+</li>
+<li>
+<p><code>git show HEAD</code>：此版本修改的資料</p>
+</li>
+<li>
+<p><code>git show HEAD^</code>：前一版修改的資料</p>
+</li>
+<li>
+<p><code>git show HEAD^^</code>：前前一版修改的資料</p>
+</li>
+<li>
+<p><code>git show HEAD~4</code>：前前前前一版修改的資料</p>
+</li>
+</ul>
+<h3 id="git-grep">git grep</h3>
+<ul>
+<li>
+<p><code>git grep "te" v1</code>：查 v1 是否有 "te" 的字串</p>
+</li>
+<li>
+<p><code>git grep "te"</code>：查現在版本是否有 "te" 的字串</p>
+</li>
+</ul>
+<h3 id="git-branch">git branch</h3>
+<ul>
+<li>
+<p>change branch name：<code>git branch -m &lt;oldname&gt; &lt;newname&gt;</code></p>
+</li>
+<li>
+<p>rename the current branch：<code>git branch -m &lt;newname&gt;</code></p>
+</li>
+<li>
+<p>delete merged branck, use <code>-D</code> to delete unmerged branch：<code>git branch -d [name]</code></p>
+</li>
+<li>
+<p>delete remote branch：<code>git push origin :remote-branch</code></p>
+</li>
+<li>
+<p>push local branch to remote branch：<code>git push origin local-branch:remote-branch</code></p>
+</li>
+<li>
+<p>fetch remote branch to local branch：<code>git fetch origin remote-branch:local-branch</code></p>
+</li>
+<li>
+<p>List referenced remote branches：<code>git branch -r</code></p>
+</li>
+</ul>
+<h3 id="git-remote">git remote</h3>
+<ul>
+<li>
+<p>检出仓库：<code>git clone git://github.com/jquery/jquery.git</code></p>
+</li>
+<li>
+<p>查看远程仓库：<code>git remote -v</code></p>
+</li>
+<li>
+<p>添加远程仓库：<code>git remote add [name] [url]</code></p>
+</li>
+<li>
+<p>删除远程仓库：<code>git remote rm [name]</code></p>
+</li>
+<li>
+<p>修改远程仓库：<code>git remote set-url --push [name] [newUrl]</code></p>
+</li>
+<li>
+<p>拉取远程仓库：<code>git pull [remoteName] [localBranchName]</code></p>
+</li>
+<li>
+<p>推送远程仓库<code>git push [remoteName] [localBranchName]</code></p>
+</li>
+</ul>
+<h3 id="gitignore-does-not-work">.gitignore does not work</h3>
+<pre><code>git rm --cached -r .
+git add .
+git status
+</code></pre>
+<h3 id="revert-changes-to-a-file-in-a-commit">Revert changes to a file in a commit</h3>
+<pre><code>git show some_commit_sha1 -- some_file.c | git apply -R
+</code></pre>
+<h3 id="export-git-log">export git log</h3>
+<pre><code>git --no-pager log &gt; log.txt
+</code></pre>
+<h3 id="commit">恢复本地已删除的 commit</h3>
+<pre><code>git reflog
+git reset --hard 98abc5a
+</code></pre>
+<h3 id="pull-request">获取远程 pull request，并新建一个分支</h3>
+<pre><code>git fetch origin pull/pull-request-ID/head:local-branch-name
+</code></pre>
+<h3 id="tag-tag">获取远程 tag，并基于某一 tag 新建一个分支</h3>
+<pre><code>git fetch origin tag v7.1.9-pro
+</code></pre>
+<pre><code>git fetch --tags --prune
+git checkout tags/v1.0 -b NewBranch
+</code></pre>
+<h3 id="clean-up-outdated-references-in-local-repository">Clean up outdated references in local repository</h3>
+<pre><code>git remote prune origin
+</code></pre>
+<h2 id="mac-git">mac 下 git 命令自动补全</h2>
+<h3 id="homebrew">安装 Homebrew</h3>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<h3 id="bash-completion">安装 bash-completion</h3>
+<pre><code>brew install bash-completion
+brew info bash-completion
+</code></pre>
+<p>Add the following line to your <code>~/.bash_profile</code> :</p>
+<pre><code>[[ -r &quot;/usr/local/etc/profile.d/bash_completion.sh&quot; ]] &amp;&amp; . &quot;/usr/local/etc/profile.d/bash_completion.sh&quot;
+</code></pre>
+<h3 id="git-completionbash">下载 git-completion.bash</h3>
+<pre><code>wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+
+mv git-completion.bash ~/.git-completion.bash
+</code></pre>
+<h3 id="bashrc">配置 ~/.bashrc</h3>
+<p>Add the following line to your <code>~/.bashrc</code> :</p>
+<pre><code>source ~/.git-completion.bash
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

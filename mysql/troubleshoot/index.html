@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>MySql Troubleshoot - lian's cheatsheet</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">lian's cheatsheet</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../AI/chatGPT/" class="nav-link">AI</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Seafile</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../seafile/conf/" class="dropdown-item">common conf</a>
+</li>
+                                    
+<li>
+    <a href="../../seafile/cas/cas/" class="dropdown-item">CAS</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../seafile/scripts/upload-file.py" class="dropdown-item">upload-file.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/django/" class="dropdown-item">django</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/base64/" class="dropdown-item">base64</a>
+</li>
+                                    
+<li>
+    <a href="../../python/pil/" class="dropdown-item">PIL</a>
+</li>
+                                    
+<li>
+    <a href="../../python/ldap/" class="dropdown-item">ldap</a>
+</li>
+                                    
+<li>
+    <a href="../../python/restful-api/" class="dropdown-item">restful-api</a>
+</li>
+                                    
+<li>
+    <a href="../../python/elasticsearch/" class="dropdown-item">elasticsearch</a>
+</li>
+                                    
+<li>
+    <a href="../../python/notebook/" class="dropdown-item">notebook</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/scripts/auto-toc.py" class="dropdown-item">auto-toc.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">saml2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../saml2/saml2/" class="dropdown-item">saml2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux/linux/" class="dropdown-item">Linux 命令</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/shell/" class="dropdown-item">shell</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/process-and-thread/" class="dropdown-item">Linux的进程、线程、文件描述符是什么</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mysql</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../mysql/" class="dropdown-item">MySql</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">MySql Troubleshoot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Network</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../network/http/" class="dropdown-item">HTTP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Docker</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../docker/docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">OnlyOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../onlyoffice/onlyoffice/" class="dropdown-item">OnlyOffice</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">CollaboraOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../collabora-office/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">MacOS</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../macos/vimrc/" class="dropdown-item">Vimrc</a>
+</li>
+                                    
+<li>
+    <a href="../../macos/bash_profile/" class="dropdown-item">Bash profile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tools</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tools/regex/" class="dropdown-item">regex</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/vim/" class="dropdown-item">vim</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/git/" class="dropdown-item">git</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/tmux/" class="dropdown-item">tmux</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/nginx/" class="dropdown-item">nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/certbot/" class="dropdown-item">certbot</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/memcached/" class="dropdown-item">memcached</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/science-online/" class="dropdown-item">science online</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/ngrok/" class="dropdown-item">ngrok</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../mysql/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../network/http/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#mysql-troubleshoot" class="nav-link">MySql Troubleshoot</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#error-2002-hy000" class="nav-link">ERROR 2002 (HY000)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#error-1130-hy000" class="nav-link">ERROR 1130 (HY000)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#error-1698-28000" class="nav-link">ERROR 1698 (28000)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#error-1071-42000" class="nav-link">ERROR 1071 (42000)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#error-1044-42000" class="nav-link">ERROR 1044 (42000)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#error-1170-42000" class="nav-link">ERROR 1170 (42000)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#err-1005" class="nav-link">[Err] 1005</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#duplicate-entry-2147483647-for-key-primary" class="nav-link">Duplicate entry '2147483647' for key 'PRIMARY'</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">中文显示为 ？？？？？</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mysql-troubleshoot">MySql Troubleshoot</h1>
+<h2 id="error-2002-hy000">ERROR 2002 (HY000)</h2>
+<p>Can't connect to MySQL server on '172.17.30.163' (115)</p>
+<pre><code>cd /etc/mysql/mariadb.conf.d/50-server.cnf
+vi mariadb.conf.d/50-server.cnf
+bind-address = 0.0.0.0
+sudo systemctl restart mysql
+</code></pre>
+<h2 id="error-1130-hy000">ERROR 1130 (HY000)</h2>
+<p>Host 'iZ2ze77tnovxl4jeegy0i4Z' is not allowed to connect to this MariaDB server</p>
+<pre><code>mysql
+</code></pre>
+<pre><code>MariaDB [(none)]&gt; use mysql
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [mysql]&gt; select Host, User,Password from user;
++-----------+------+-------------------------------------------+
+| Host      | User | Password                                  |
++-----------+------+-------------------------------------------+
+| localhost | root | *B207A659E3668E1E01AAFEB3E47E073B98EAD62B |
++-----------+------+-------------------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [mysql]&gt; update user set Host='%' where User='root';
+Query OK, 1 row affected (0.000 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mysql]&gt; flush privileges;
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [mysql]&gt; exit
+Bye
+</code></pre>
+<h2 id="error-1698-28000">ERROR 1698 (28000)</h2>
+<p>Access denied for user 'root'@'localhost'</p>
+<p><a href="https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost">https://stackoverflow.com/questions/39281594/error-1698-28000-access-denied-for-user-rootlocalhost</a></p>
+<p>Some systems like Ubuntu, mysql is using by default the UNIX auth_socket plugin.</p>
+<p>Basically means that: db_users using it, will be "auth" by the system user credentias. You can see if your root user is set up like this by doing the following:</p>
+<pre><code>$ sudo mysql -u root # I had to use &quot;sudo&quot; since is new installation
+
+mysql&gt; USE mysql;
+mysql&gt; SELECT User, Host, plugin FROM mysql.user;
+
++------------------+-----------------------+
+| User             | plugin                |
++------------------+-----------------------+
+| root             | auth_socket           |
+| mysql.sys        | mysql_native_password |
+| debian-sys-maint | mysql_native_password |
++------------------+-----------------------+
+</code></pre>
+<p>As you can see in the query, the root user is using the auth_socket plugin</p>
+<p>There are 2 ways to solve this:</p>
+<p>You can set the root user to use the mysql_native_password plugin
+You can create a new db_user with you system_user (recommended)
+Option 1:</p>
+<pre><code>$ sudo mysql -u root # I had to use &quot;sudo&quot; since is new installation
+
+mysql&gt; USE mysql;
+mysql&gt; UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+mysql&gt; FLUSH PRIVILEGES;
+mysql&gt; exit;
+
+$ sudo service mysql restart
+</code></pre>
+<p>Option 2: (replace YOUR_SYSTEM_USER with the username you have)</p>
+<pre><code>$ sudo mysql -u root # I had to use &quot;sudo&quot; since is new installation
+
+mysql&gt; USE mysql;
+mysql&gt; CREATE USER 'YOUR_SYSTEM_USER'@'localhost' IDENTIFIED BY 'YOUR_PASSWD';
+mysql&gt; GRANT ALL PRIVILEGES ON *.* TO 'YOUR_SYSTEM_USER'@'localhost';
+mysql&gt; UPDATE user SET plugin='auth_socket' WHERE User='YOUR_SYSTEM_USER';
+mysql&gt; FLUSH PRIVILEGES;
+mysql&gt; exit;
+
+$ sudo service mysql restart
+</code></pre>
+<p>Remember that if you use option #2 you'll have to connect to mysql as your system username (mysql -u YOUR_SYSTEM_USER)</p>
+<p>Note: On some systems (e.g., Debian stretch) 'auth_socket' plugin is called 'unix_socket', so the corresponding SQL command should be: UPDATE user SET plugin='unix_socket' WHERE User='YOUR_SYSTEM_USER';</p>
+<p>Update: from @andy's comment seems that mysql 8.x.x updated/replaced the auth_socket for caching_sha2_password I don't have a system setup with mysql 8.x.x to test this, however the steps above should help you to understand the issue. Here's the reply:</p>
+<p>One change as of MySQL 8.0.4 is that the new default authentication plugin is 'caching_sha2_password'. The new 'YOUR_SYSTEM_USER' will have this auth plugin and you can login from the bash shell now with "mysql -u YOUR_SYSTEM_USER -p" and provide the password for this user on the prompt. No need for the "UPDATE user SET plugin" step. For the 8.0.4 default auth plugin update see, https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/</p>
+<hr />
+<pre><code>mysql
+</code></pre>
+<pre><code>MariaDB [(none)]&gt; use mysql
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [mysql]&gt; UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+Query OK, 1 row affected (0.000 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [mysql]&gt; FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [mysql]&gt; exit
+Bye
+</code></pre>
+<h2 id="error-1071-42000">ERROR 1071 (42000)</h2>
+<p>Specified key was too long; max key length is 767 bytes</p>
+<h4 id="case-1">case 1</h4>
+<p>执行语句报错</p>
+<pre><code>MySQL [ccnet_db]&gt; CREATE TABLE IF NOT EXISTS lian3EmailUser (id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT, email VARCHAR(255), passwd VARCHAR(256), is_staff BOOL NOT NULL, is_active BOOL NOT NULL, ctime BIGINT, reference_id VARCHAR(255),UNIQUE INDEX (email), UNIQUE INDEX (reference_id))ENGINE=INNODB;
+
+ERROR 1071 (42000): Specified key was too long; max key length is 767 bytes
+</code></pre>
+<p>但是同样语句，后面加了 <code>CHARSET=utf8</code> 即可执行成功</p>
+<pre><code>MySQL [ccnet_db]&gt; CREATE TABLE IF NOT EXISTS lian3EmailUser (id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT, email VARCHAR(255), passwd VARCHAR(256), is_staff BOOL NOT NULL, is_active BOOL NOT NULL, ctime BIGINT, reference_id VARCHAR(255),UNIQUE INDEX (email), UNIQUE INDEX (reference_id))ENGINE=INNODB CHARSET=utf8;
+
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+<p>检查发现，数据库字符集用的是 <code>utf8mb4</code></p>
+<pre><code>MySQL [(none)]&gt; show create database ccnet_db;
++----------+----------------------------------------------------------------------+
+| Database | Create Database                                                      |
++----------+----------------------------------------------------------------------+
+| ccnet_db | CREATE DATABASE `ccnet_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ |
++----------+----------------------------------------------------------------------+
+1 row in set (0.00 sec)
+</code></pre>
+<p>改为 <code>utf8</code> 后即可</p>
+<pre><code>ALTER DATABASE ccnet_db DEFAULT CHARACTER SET utf8;
+</code></pre>
+<h4 id="case-2">case 2</h4>
+<p>系统变量 <code>innodb_large_prefix</code> 开启了，则对于使用 <code>DYNAMIC</code> 或 <code>COMPRESSED</code> 行格式的 <code>InnoDB</code> 表，索引键前缀限制为3072字节。如果禁用 <code>innodb_large_prefix</code> ，不管是什么表，索引键前缀限制为767字节。</p>
+<p>上述的bug很明显是索引超出了限制的长度767（我司生产上 <code>innodb_large_prefix</code> 禁用了）：</p>
+<p>我发现报错的那张表建立了一个 <code>varchar</code> 类型的索引， <code>varchar(255)</code> ，觉得没什么问题，其实不然，上述的767是字节，而 <code>varchar</code> 类型是字符，同时我发现我使用的字符集为（<code>utf8mb4</code>），这个指每个字符最大的字节数为4，所以很明显 <code>4*255 &gt; 767</code>。</p>
+<p>所以就报上述错了 <code>（Specified key was too long; max key length is 767 bytes）</code>。</p>
+<p>解决方法：</p>
+<p>改变 <code>varchar</code> 的字符数，我改成了64就可以了。 <code>varchar(64)</code> </p>
+<p>或者启用 <code>innodb_large_prefix</code> ，那么限制值会增加到3072</p>
+<h2 id="error-1044-42000">ERROR 1044 (42000)</h2>
+<p>Access denied for user 'seafile'@'localhost' to database 'ifile'</p>
+<pre><code>mysql -u root -p
+
+grant all privileges on *.* to 'seafile'@'localhost' identified by 'IeKi8aht';
+
+flush privileges;
+</code></pre>
+<h2 id="error-1170-42000">ERROR 1170 (42000)</h2>
+<p>BLOB/TEXT Column Used in Key Specification Without a Key Length</p>
+<p>http://stackoverflow.com/questions/1827063/mysql-error-key-specification-without-a-key-length</p>
+<h2 id="err-1005">[Err] 1005</h2>
+<p>Can't create table (errno: 150 "Foreign key constraint is incorrectly formed")</p>
+<p>建立外键的字段必须和引用表的字段一模一样的类型。
+<a href="https://upliu.net/foreign-key-constraint-is-incorrectly-formed.html">https://upliu.net/foreign-key-constraint-is-incorrectly-formed.html</a></p>
+<h3 id="case-1_1">case 1，阿里巴巴数据库外键问题</h3>
+<p>阿里巴巴定制的数据库中，创建表需要使用字符集<code>CHARSET=utf8mb4</code> 。</p>
+<pre><code>CREATE TABLE `tags_fileuuidmap` (
+  ...
+  `uuid` char(32) NOT NULL COMMENT 'uuid',
+  ...
+) ENGINE=InnoDB AUTO_INCREMENT=396 DEFAULT CHARSET=utf8mb4 COMMENT='tags_fileuuidmap'
+;
+</code></pre>
+<p>Seahub 的数据库中，创建表时使用的字符集为<code>CHARSET=utf8</code> 。</p>
+<pre><code>CREATE TABLE `related_files_relatedfiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `o_uuid_id` char(32) NOT NULL,
+  `r_uuid_id` char(32) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `related_files_relate_o_uuid_id_aaa8e613_fk_tags_file` (`o_uuid_id`),
+  KEY `related_files_relate_r_uuid_id_031751df_fk_tags_file` (`r_uuid_id`),
+  CONSTRAINT `related_files_relate_o_uuid_id_aaa8e613_fk_tags_file` FOREIGN KEY (`o_uuid_id`) REFERENCES `tags_fileuuidmap` (`uuid`),
+  CONSTRAINT `related_files_relate_r_uuid_id_031751df_fk_tags_file` FOREIGN KEY (`r_uuid_id`) REFERENCES `tags_fileuuidmap` (`uuid`)
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8
+</code></pre>
+<p>所以直接使用 Seahub 的创建语句，给阿里巴巴创建新表时，会报错：</p>
+<pre><code>ERROR 1005 (HY000): Can't create table `ali_seahub`.`related_files_relatedfiles` (errno: 150 &quot;Foreign key constraint is incorrectly formed&quot;)
+</code></pre>
+<p>解决方法</p>
+<p>根据 MySQL 的 <a href="https://dev.mysql.com/doc/refman/5.6/en/create-table-foreign-keys.html">外键文档</a></p>
+<blockquote>
+<p>Corresponding columns in the foreign key and the referenced key must have similar data types. The size and sign of integer types must be the same. The length of string types need not be the same. For nonbinary (character) string columns, the character set and collation must be the same.</p>
+</blockquote>
+<p>将 Seahub 建表语句中的 CHARSET 改为 utf8mb4，经测试可创建新表成功。</p>
+<h3 id="case-2_1">case 2</h3>
+<p>该错误一般出现原因如下：</p>
+<p>1、外键的引用类型不一样，如主键是int外键是char</p>
+<p>2、找不到主表中引用的列</p>
+<p>3、主键和外键的字符编码不一致，也可能存储引擎不一样</p>
+<pre><code>CREATE TABLE t_employee(
+    emp_id INT(3) PRIMARY KEY,
+    emp_no INT(3) UNIQUE NOT NULL,
+    emp_name VARCHAR(10) NOT NULL,
+    emp_age tinyint(4) NOT NULL DEFAULT 25 CHECK (emp_age BETWEEN 20 AND 60),
+    sex VARCHAR(1) CHECK (sex in ('男','女')),
+    job VARCHAR(20),
+    sal INT(10),
+    -- inline写法
+    -- REFERENCES 主表（主表字段）
+    -- dept_no int  REFERENCES t_dept(dept_no)
+    -- outline写法
+    dept_no int NOT NULL ,
+    FOREIGN KEY(dept_no) REFERENCES t_dept(dept_no) ON DELETE SET NULL
+);
+</code></pre>
+<p>格式为 <code>dept_no int NOT NULL</code>, 但是外键却为 <code>FOREIGN KEY(dept_no) REFERENCES t_dept(dept_no) ON DELETE SET NULL</code>，删除格式的 <code>NOT NULL</code> 即可</p>
+<h2 id="duplicate-entry-2147483647-for-key-primary">Duplicate entry '2147483647' for key 'PRIMARY'</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节</th>
+<th>最小值~最大值(带符号的/无符号的)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT</td>
+<td>1</td>
+<td>-128~127 / 0~255</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>2</td>
+<td>-32768~32767 / 0~65535</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>3</td>
+<td>-8388608~8388607 / 0~16777215</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>4</td>
+<td>-2147483648~2147483647 / 0~4294967295</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>8</td>
+<td>-9223372036854775808~9223372036854775807 / 0~18446744073709551615</td>
+</tr>
+</tbody>
+</table>
+<p>INT 类型，占用 4 个字节，每字节 8 个比特，即总共占用 32 个比特，所以：</p>
+<ol>
+<li>
+<p>无符号型，最大值为 4294967295（即4byte=32bit，最大值即是32个1组成）</p>
+</li>
+<li>
+<p>有符号型，最大值为 2147483647。</p>
+</li>
+</ol>
+<p>所以达到最大值后，INSERT 语句还会使用 2147483647，导致报错。</p>
+<p>建表语句 <code>id int(11) unsigned NOT NULL AUTO_INCREMENT,</code> 中的 <code>11</code>，只表示可显示的位数，与实际存储长度无关。</p>
+<h2 id="_1">中文显示为 ？？？？？</h2>
+<pre><code>show variables like 'character%';
+set names utf8mb4;
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

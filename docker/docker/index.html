@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Docker - lian's cheatsheet</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">lian's cheatsheet</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../AI/chatGPT/" class="nav-link">AI</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Seafile</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../seafile/conf/" class="dropdown-item">common conf</a>
+</li>
+                                    
+<li>
+    <a href="../../seafile/cas/cas/" class="dropdown-item">CAS</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../seafile/scripts/upload-file.py" class="dropdown-item">upload-file.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/django/" class="dropdown-item">django</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/base64/" class="dropdown-item">base64</a>
+</li>
+                                    
+<li>
+    <a href="../../python/pil/" class="dropdown-item">PIL</a>
+</li>
+                                    
+<li>
+    <a href="../../python/ldap/" class="dropdown-item">ldap</a>
+</li>
+                                    
+<li>
+    <a href="../../python/restful-api/" class="dropdown-item">restful-api</a>
+</li>
+                                    
+<li>
+    <a href="../../python/elasticsearch/" class="dropdown-item">elasticsearch</a>
+</li>
+                                    
+<li>
+    <a href="../../python/notebook/" class="dropdown-item">notebook</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">scripts</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../python/scripts/auto-toc.py" class="dropdown-item">auto-toc.py</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">saml2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../saml2/saml2/" class="dropdown-item">saml2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../linux/linux/" class="dropdown-item">Linux 命令</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/shell/" class="dropdown-item">shell</a>
+</li>
+                                    
+<li>
+    <a href="../../linux/process-and-thread/" class="dropdown-item">Linux的进程、线程、文件描述符是什么</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Mysql</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../mysql/mysql/" class="dropdown-item">MySql</a>
+</li>
+                                    
+<li>
+    <a href="../../mysql/troubleshoot/" class="dropdown-item">MySql Troubleshoot</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Network</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../network/http/" class="dropdown-item">HTTP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Docker</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">OnlyOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../onlyoffice/onlyoffice/" class="dropdown-item">OnlyOffice</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">CollaboraOffice</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../collabora-office/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">MacOS</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../macos/vimrc/" class="dropdown-item">Vimrc</a>
+</li>
+                                    
+<li>
+    <a href="../../macos/bash_profile/" class="dropdown-item">Bash profile</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">tools</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tools/regex/" class="dropdown-item">regex</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/vim/" class="dropdown-item">vim</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/git/" class="dropdown-item">git</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/tmux/" class="dropdown-item">tmux</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/nginx/" class="dropdown-item">nginx</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/certbot/" class="dropdown-item">certbot</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/memcached/" class="dropdown-item">memcached</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/science-online/" class="dropdown-item">science online</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/ngrok/" class="dropdown-item">ngrok</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../about/" class="nav-link">About</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../network/http/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../onlyoffice/onlyoffice/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#docker" class="nav-link">Docker</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#install" class="nav-link">install</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#command" class="nav-link">command</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">清理磁盘空间</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#trouble-shoot" class="nav-link">trouble shoot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dockerfile" class="nav-link">Dockerfile</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="docker">Docker</h1>
+<h2 id="install">install</h2>
+<pre><code>sudo apt-get update
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre>
+<h2 id="command">command</h2>
+<h3 id="login">login</h3>
+<pre><code># login to docker hub
+docker login
+</code></pre>
+<pre><code>{
+  &quot;registry-mirrors&quot;: [&quot;https://0nth4654.mirror.aliyuncs.com&quot;],
+  &quot;insecure-registries&quot;: [&quot;test.seafile.top&quot;]
+}
+</code></pre>
+<h3 id="run-and-exec">run and exec</h3>
+<p>将本地的 8123 端口映射到 Docker 容器的 8000 端口。</p>
+<pre><code>docker run -it -p 127.0.0.1:8123:8000 ubuntu:latest /bin/bash
+
+docker run -d --name hancom-office -p 8888:80 --privileged=true centos:7 /usr/sbin/init
+</code></pre>
+<ul>
+<li><code>-t</code>: 在新容器内指定一个伪终端或终端。</li>
+<li><code>-i</code>: 允许你对容器内的标准输入 (STDIN) 进行交互。</li>
+<li><code>-P</code>: 是容器内部端口 <strong>随机映射</strong> 到主机的高端口。</li>
+<li><code>-p</code>: 是容器内部端口 <strong>绑定</strong> 到指定的主机端口。</li>
+</ul>
+<pre><code># This will connect to the particular container
+docker exec -it &lt;container-id&gt; /bin/bash
+
+docker exec -it hancom-office /bin/bash
+</code></pre>
+<h3 id="ps">ps</h3>
+<p>可用 <code>docker ps</code> 或者 <code>docker port {container_id}</code> 命令查看</p>
+<pre><code>docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS                    NAMES
+fab859fcf1ad        ubuntu:latest       &quot;/bin/bash&quot;         4 seconds ago       Up 3 seconds                0.0.0.0:8123-&gt;8000/tcp   quirky_hopper
+</code></pre>
+<p>只显示某几列信息</p>
+<pre><code>docker ps -a --format &quot;{{.ID}}\t{{.Names}}\t{{.Image}}&quot;
+</code></pre>
+<h3 id="port">port</h3>
+<pre><code>docker port fab859fcf1ad
+8000/tcp -&gt; 0.0.0.0:8123
+</code></pre>
+<h3 id="logs">logs</h3>
+<pre><code>docker logs -f {container_id}
+</code></pre>
+<blockquote>
+<p><code>-f</code>: 像使用 <code>tail -f</code> 一样来输出容器内部的标准输出。</p>
+</blockquote>
+<h3 id="top">top</h3>
+<pre><code>docker top {container_id}
+</code></pre>
+<h3 id="commit">commit</h3>
+<pre><code>docker commit -m=&quot;update&quot; -a=&quot;lian&quot; container-name imwhatiam/ubuntu:v2
+</code></pre>
+<blockquote>
+<p><code>-m</code>: 提交的描述信息
+<code>-a</code>: 指定镜像作者
+<code>runoob/ubuntu:v2</code>: 指定要创建的目标镜像名</p>
+</blockquote>
+<h3 id="push">push</h3>
+<pre><code># push local image to docker hub, must login first.
+docker push imwhatiam/ubuntu-seafile:v1
+</code></pre>
+<h3 id="stop">stop</h3>
+<pre><code>docker stop $(docker ps -a -q)
+</code></pre>
+<h3 id="rm">rm</h3>
+<pre><code>docker rm $(docker ps -a -q -f status=exited)
+</code></pre>
+<h3 id="cp">cp</h3>
+<pre><code># 将主机 /www/runoob 目录拷贝到容器 96f7f14e99ab 的 /www 目录下。
+docker cp /www/runoob 96f7f14e99ab:/www/
+
+# 将主机 /www/runoob 目录拷贝到容器 96f7f14e99ab 中，目录重命名为 www。
+docker cp /www/runoob 96f7f14e99ab:/www
+
+# 将容器 96f7f14e99ab 的 /www 目录拷贝到主机的 /tmp 目录中。
+docker cp  96f7f14e99ab:/www /tmp/
+</code></pre>
+<pre><code>docker cp foo.txt mycontainer:/foo.txt
+docker cp mycontainer:/foo.txt foo.txt
+</code></pre>
+<h3 id="start">start</h3>
+<pre><code># restart it in the background
+docker start  `docker ps -q -l`
+
+# This will start all container which are in exited state.
+docker start $(docker ps -a -q --filter &quot;status=exited&quot;)
+</code></pre>
+<h3 id="attach">attach</h3>
+<pre><code># reattach the terminal &amp; stdin
+docker attach `docker ps -q -l`
+</code></pre>
+<h3 id="export">export</h3>
+<pre><code># 将 id 为 a404c6c174a2 的 **容器** 按日期保存为tar文件。
+docker export -o mysql-`date +%Y%m%d`.tar a404c6c174a2
+</code></pre>
+<h3 id="save">save</h3>
+<pre><code># 将 **镜像** runoob/ubuntu:v3 生成 my_ubuntu_v3.tar
+docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3
+</code></pre>
+<h3 id="import">import</h3>
+<pre><code># 从镜像归档文件my_ubuntu_v3.tar创建镜像，命名为runoob/ubuntu:v4
+docker import my_ubuntu_v3.tar runoob/ubuntu:v3
+</code></pre>
+<h3 id="search">search</h3>
+<pre><code>docker search httpd
+</code></pre>
+<h3 id="inspect">inspect</h3>
+<pre><code># 查看 docker 底层信息
+docker inspect
+
+# 获取某个具体信息
+docker inspect -f '{{.NetworkSettings.IPAddress}}' ubuntu
+</code></pre>
+<h2 id="_1">清理磁盘空间</h2>
+<p>查看 docker 占用</p>
+<pre><code>docker system df
+</code></pre>
+<p>清理</p>
+<pre><code>docker system prune
+</code></pre>
+<p>删除 docker container 内的 /var/ 目录下的日志，并重启 docker container 。</p>
+<h2 id="trouble-shoot">trouble shoot</h2>
+<h4 id="error-response-from-daemon-oci-runtime-create-failed-container_linuxgo348-starting-container-process-caused-process_linuxgo297-copying-bootstrap-data-to-pipe-caused-write-init-p-broken-pipe-unknown">Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container process caused "process_linux.go:297: copying bootstrap data to pipe caused "write init-p: broken pipe"": unknown</h4>
+<p>系统版本为 Ubuntu 14.04, 升级 docker 后，版本不一致导致的，<a href="https://meta.discourse.org/t/docker-copying-bootstrap-data-to-pipe-caused-write-init-p-broken-pipe/108947/32">解决方法</a>：</p>
+<pre><code>apt remove docker-ce docker-ce-cli
+apt install docker-ce=18.06.1~ce~3-0~ubuntu
+</code></pre>
+<h2 id="dockerfile">Dockerfile</h2>
+<pre><code>FROM ubuntu:latest
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# https://developer.aliyun.com/mirror/ubuntu
+# RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+# COPY ubuntu-source.list /etc/apt/sources.list
+
+RUN mkdir /root/.pip
+COPY pip.conf /root/.pip/
+COPY tmux.conf /root/.tmux.conf
+
+RUN apt-get -q update &amp;&amp; \
+    apt-get -qy upgrade
+
+RUN apt-get install -qy --no-install-recommends pkg-config \
+    python3 python3-dev python3-pip python3-setuptools \
+    curl less vim wget git net-tools tmux tzdata
+
+# RUN rm -rf /etc/localtime &amp;&amp; ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
+RUN pip install wheel &amp;&amp; \
+    pip install --upgrade django ipython pip
+
+RUN git config --global user.name &quot;lian&quot; &amp;&amp; \
+    git config --global user.email &quot;imwhatiam123@gmail.com&quot; &amp;&amp; \
+    git config --global core.editor &quot;vim&quot;
+
+# Clean up APT when done.
+RUN apt-get -qy autoremove &amp;&amp; \
+    apt-get clean
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
