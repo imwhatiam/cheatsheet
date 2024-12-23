@@ -1,5 +1,6 @@
 # vim 命令
 
+
 ## 光标移动
 
 | 操作  | 说明                  | 备注                         |
@@ -44,13 +45,16 @@ nG：光标移动到第 n 行，n 为数字
 
 ## 查找和替换
 
+删除空格
+```
+%s/\ \+//g
+```
+
+将每行以0或多个空格开始、中间包含0或多个数字、并以0或多个空格结束的字符串替换为空。
 ```
 :%s/^\s*[0-9]*\s*//gc
 
 ```
-
-将每行以0或多个空格开始、中间包含0或多个数字、并以0或多个空格结束的字符串替换为空。
-
 > `%`代表针对被编辑文件的每一行进行后续操作；`^` 表示行首（`$` 表示行尾），`\s` 表示空格，`[0-9]` 表示0~9的数字，`*` 表示0或多个
 
 * 查找 `aa` 或 `bb`：`/aa\|bb`
@@ -62,7 +66,6 @@ nG：光标移动到第 n 行，n 为数字
 * 行尾添加字符串 `string`：`%s/$/string/gc`
 * 在2-7行之间，将ddd替换成fff：`:2,7s/ddd/fff/g`
 * 在6~10行的行首加一个 `#` 号：`:6,10s/^/#/gc`
-
 
 ```
 \        取消后面所跟字符的特殊含义。比如 \[vim\] 匹配字符串“[vim]”
@@ -86,167 +89,4 @@ $        匹配行末。例如 /hello$ 查找出现在行末的单词 hello
 \(\)     括住某段正规表达式
 
 \数字    重复匹配前面某段括住的表达式。例如 \(hello\).*\1 匹配一个开始和末尾都是“hello”，中间是任意字符串的字符串
-
 ```
-
-## .vimrc
-
-```
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'Yggdroot/indentLine'
-
-Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" 设置过滤不进行查找的后缀名
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc|html|js)$'
-
-Plugin 'majutsushi/tagbar'
-" brew tap universal-ctags/universal-ctags
-" brew install --HEAD universal-ctags
-map <F4> :TagbarToggle<CR>
-
-" 启动时自动focus
-let g:tagbar_auto_faocus =1
-
-" 启动指定文件时自动开启tagbar
-autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
-
-Plugin 'ycm-core/YouCompleteMe'
-" *********************************************
-" YCM插件相关
-" *********************************************
-let g:ycm_autoclose_preview_window_after_completion=1
-" 跳转到定义处
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" 默认tab、s-tab和自动补全冲突
-let g:ycm_key_list_select_completion = ['<TAB>', '<c-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>', '<c-p>', '<Up>']
-let g:ycm_auto_trigger = 1
-
-
-Plugin 'scrooloose/nerdtree'
-map <F5> :NERDTreeToggle<CR>
-let NERDTreeIgnore = [".*\.pyc",".*\.swp",".*\.png",".*\.gif",".*\.jpg",".*\.ico","tags",".*\.tar.gz"]
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.DS_Store', '\.db']
-let NERDTreeWinSize=20
-" How can I close vim if the only window left open is a NERDTree?
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-
-Plugin 'yegappan/grep'
-nnoremap <silent> <F12> :Rgrep<CR>
-let Grep_Default_Filelist = '*.py *.html *.js'
-
-
-Plugin 'yegappan/mru'
-nnoremap <silent> <F7> :MRU<CR>
-
-
-Plugin 'ntpeters/vim-better-whitespace'
-nnoremap <silent> <F8> :StripWhitespace<CR>
-
-
-Plugin 'vim-syntastic/syntastic'
-" pip3 install flake8
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args="--max-line-length=120"
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
-
-map <F5> :call PRUN()<CR>
-func! PRUN()
-    exec "w"
-    if &filetype == 'python'
-        exec "!python %"
-    endif
-endfunc
-
-syntax on " Syntax highlighting
-
-set number
-set textwidth=79
-
-" Auto indent
-set autoindent
-
-" Smart indent
-set smartindent
-
-" Ignore case when searching
-set ignorecase
-
-" Remember info about open buffers on close
-set viminfo^=%
-
-" Set 7 lines to the cursor - when moving vertically using j/k
-set scrolloff=7
-
-" Always show current position
-set ruler
-
-" When searching try to be smart about cases
-set smartcase
-
-" Highlight search results
-set hlsearch
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-" Remember info about open buffers on close
-set viminfo^=%
-
-set backspace=2
-
-set encoding=utf-8
-
-set clipboard=unnamed
-
-" *********************************************
-" 分割布局相关
-" *********************************************
-set splitbelow
-set splitright
-"快捷键，ctrl+l切换到左边布局，ctrl+h切换到右边布局
-"ctrl+k切换到上面布局，ctrl+j切换到下面布局
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-set statusline+=%F
-
-```
-
-

@@ -5,6 +5,8 @@
 ### pip
 
 ```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+
 vi ~/.pip/pip.conf
 
 [global]
@@ -77,6 +79,8 @@ git config --global --unset https.proxy
 ### npm 设置 socks5 代理
 
 ```
+npm install --registry=https://registry.npm.taobao.org
+
 npm config set proxy socks5://127.0.0.1:1080
 npm config set https-proxy socks5://127.0.0.1:1080
 
